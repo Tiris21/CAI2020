@@ -1,0 +1,364 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?> 
+ <Ayudas>
+   <ayuda id="0" >
+    <![CDATA[ 
+<table style "width:100%">
+    <tr>
+      <td> <img src="Images/40x48-Vivienda.jpg" alt="Habitación del domicilio">    </td>
+      <td style="vertical-align:central;"> <strong>Habitación del domicilio</strong></td>
+    </tr>
+  </table>
+<br />
+  <p>Considere que una persona vive normalmente en el domicilio si allí duerme, prepara sus alimentos, come y se protege del ambiente.</p>
+  <p>Tome en cuenta que se está preguntando por personas que en este momento están habitando el domicilio y no tienen otro lugar fijo donde vivir.</p>
+            ]]>
+   </ayuda>
+   <ayuda id="1">
+    <![CDATA[  <script>
+  function abrirVentana(url) {
+    var ancho       = window.innerWidth  - 200;
+    var alto        = window.innerHeight - 400;
+    var izquierda   = (screen.width  / 2)-(ancho / 2);
+    var arriba      = (screen.height / 2)-(alto  / 2);
+    var windowsInfo = window.open(url,'_blank','height='+alto+',left='+izquierda+',location=no,menubar=no,resizable=yes,scrollbars=yes,status=no,titlebar=no,toolbar=no,top='+arriba+',width='+ancho);    
+  } 
+  </script>
+  <table style "width:100%">
+    <tr>
+      <td> <img src="Images/40x48-Vivienda.jpg" alt="Número de viviendas en el mismo domicilio">    </td>
+      <td style="vertical-align:central;"> <strong>Número de viviendas en el mismo domicilio</strong></td>
+    </tr>
+  </table>
+<br />
+  <p>Registre en la casilla el número de viviendas que existen en el mismo domicilio, contando la de usted.</p>
+  <p>Considere que hay casos en los cuales varias viviendas se ubican en el mismo predio o terreno.</p>
+     <p><a href="#" onClick="abrirVentana('Ayuda_Dom_02_Numeroviviendas.html')">Ver imágenes con ejemplos…</a></p>
+            ]]> 
+   </ayuda>
+  <ayuda id="2" >
+    <![CDATA[  <script>
+  function abrirVentana(url) {
+    var ancho       = window.innerWidth  - 200;
+    var alto        = window.innerHeight - 400;
+    var izquierda   = (screen.width  / 2)-(ancho / 2);
+    var arriba      = (screen.height / 2)-(alto  / 2);
+    var windowsInfo = window.open(url,'_blank','height='+alto+',left='+izquierda+',location=no,menubar=no,resizable=yes,scrollbars=yes,status=no,titlebar=no,toolbar=no,top='+arriba+',width='+ancho);    
+  } 
+  </script>
+  <table style "width:100%">
+    <tr>
+      <td> <img src="Images/40x48-Vivienda.jpg" alt="Clase de vivienda">    </td>
+      <td style="vertical-align:central;"> <strong>Clase de vivienda</strong></td>
+    </tr>
+  </table>
+<br />
+  <p>Indique la clase de vivienda con la que más se identifica el domicilio donde recibió la invitación.</p>
+  <p>Para más información, seleccione:</p>
+  <ul>
+<li><p> <a href="#" onClick="abrirVentana('Ayuda_Dom_03_Casaunica.html')">Casa única en el terreno </a></p></li>
+<li> <p> <a href="#" onClick="abrirVentana('Ayuda_Dom_03_Casaquecomparte.html')">Casa que comparte terreno con otra(s) </a></p></li>
+<li> <p> <a href="#" onClick="abrirVentana('Ayuda_Dom_03_Casaduplex.html')">Casa dúplex, triple o cuádruple </a></p></li>
+<li> <p> <a href="#" onClick="abrirVentana('Ayuda_Dom_03_Departamentoedificio.html')">Departamento en edificio </a></p></li>
+<li> <p> <a href="#" onClick="abrirVentana('Ayuda_Dom_03_Viviendavecindad.html')">Vivienda en vecindad o cuartería </a></p></li>
+<li> <p> <a href="#" onClick="abrirVentana('Ayuda_Dom_03_Cuartoazotea.html')">Cuarto en la azotea de un edificio</a></p></li>
+<li> <p> <a href="#" onClick="abrirVentana('Ayuda_Dom_03_Localhabitacion.html')">Local no construido para habitación </a></p></li>
+ </ul> 
+            ]]>
+   </ayuda>
+ <ayuda id="3" >
+    <![CDATA[   <script>
+  function abrirVentana(url) {
+    var ancho       = window.innerWidth  - 200;
+    var alto        = window.innerHeight - 400;
+    var izquierda   = (screen.width  / 2)-(ancho / 2);
+    var arriba      = (screen.height / 2)-(alto  / 2);
+    var windowsInfo = window.open(url,'_blank','height='+alto+',left='+izquierda+',location=no,menubar=no,resizable=yes,scrollbars=yes,status=no,titlebar=no,toolbar=no,top='+arriba+',width='+ancho);    
+  } 
+  </script>
+  <table style "width:100%">
+    <tr>
+      <td> <img src="Images/40x48-Vivienda.jpg" alt="Motivo de la deshabitación">    </td>
+      <td style="vertical-align:central;"> <strong>Motivo de la deshabitación</strong></td>
+    </tr>
+  </table>
+<br />
+  <p>Para más información, seleccione:</p>
+  <ul>
+<li><p> <a href="#" onClick="abrirVentana('Ayuda_Dom_04_Seusaocasionalmente.html')">Se usa  ocasionalmente o en fines de semana</a></p></li>
+<li> <p> <a href="#" onClick="abrirVentana('Ayuda_Dom_04_Seencuentradesocupado.html')">Se encuentra desocupado actualmente</a></p></li>
+            ]]>
+   </ayuda>
+ <ayuda id="4" >
+    <![CDATA[  <script>
+  function abrirVentana(url) {
+    var ancho       = window.innerWidth  - 200;
+    var alto        = window.innerHeight - 400;
+    var izquierda   = (screen.width  / 2)-(ancho / 2);
+    var arriba      = (screen.height / 2)-(alto  / 2);
+    var windowsInfo = window.open(url,'_blank','height='+alto+',left='+izquierda+',location=no,menubar=no,resizable=yes,scrollbars=yes,status=no,titlebar=no,toolbar=no,top='+arriba+',width='+ancho);    
+  } 
+  </script>
+  <table style "width:100%">
+    <tr>
+      <td> <img src="Images/40x48-Vivienda.jpg" alt="Pisos">    </td>
+      <td style="vertical-align:central;"> <strong>Pisos</strong></td>
+    </tr>
+  </table>
+<br />
+  <p>Indique el material de recubrimiento que predomina en el piso de su vivienda.</p>
+  <p>Para más información, seleccione:</p>
+  <ul>
+<li><p> <a href="#" onClick="abrirVentana('Ayuda_Viv_01_Pisotierra.html')">Tierra</a></p></li>
+<li> <p> <a href="#" onClick="abrirVentana('Ayuda_Viv_01_Cementoofirme.html')">Cemento o firme</a></p></li>
+<li> <p> <a href="#" onClick="abrirVentana('Ayuda_Viv_01_Mosaicomadera.html')">Mosaico, madera u otro recubrimiento</a></p></li>
+            ]]>
+   </ayuda>
+ <ayuda id="5" >
+    <![CDATA[   <script>
+  function abrirVentana(url) {
+    var ancho       = window.innerWidth  - 200;
+    var alto        = window.innerHeight - 400;
+    var izquierda   = (screen.width  / 2)-(ancho / 2);
+    var arriba      = (screen.height / 2)-(alto  / 2);
+    var windowsInfo = window.open(url,'_blank','height='+alto+',left='+izquierda+',location=no,menubar=no,resizable=yes,scrollbars=yes,status=no,titlebar=no,toolbar=no,top='+arriba+',width='+ancho);    
+  } 
+  </script>
+  <table style "width:100%">
+    <tr>
+      <td> <img src="Images/40x48-Vivienda.jpg" alt="Dormitorios">    </td>
+      <td style="vertical-align:central;"> <strong>Dormitorios</strong></td>
+    </tr>
+  </table>
+<br />
+  <p>Registre en la casilla, el número de cuartos que se usan para dormir, independientemente de que en ellos se realicen también otras actividades.</p>
+  <ul>
+<li><p> <a href="#" onClick="abrirVentana('Ayuda_Viv_02_Vivenda1dormitorio.html')">Ver ejemplo de vivienda con 1 dormitorio.</a></p></li>
+<li> <p> <a href="#" onClick="abrirVentana('Ayuda_Viv_02_Vivenda2dormitorios.html')">Ver ejemplo de vivienda con 2 dormitorios.</a></p></li>
+<li> <p> <a href="#" onClick="abrirVentana('Ayuda_Viv_02_Vivenda3dormitorios.html')">Ver ejemplo de vivienda con 3 dormitorios.</a></p></li>
+            ]]>
+   </ayuda>
+ <ayuda id="6" >
+    <![CDATA[  <script>
+  function abrirVentana(url) {
+    var ancho       = window.innerWidth  - 200;
+    var alto        = window.innerHeight - 400;
+    var izquierda   = (screen.width  / 2)-(ancho / 2);
+    var arriba      = (screen.height / 2)-(alto  / 2);
+    var windowsInfo = window.open(url,'_blank','height='+alto+',left='+izquierda+',location=no,menubar=no,resizable=yes,scrollbars=yes,status=no,titlebar=no,toolbar=no,top='+arriba+',width='+ancho);    
+  } 
+  </script>
+  <table style "width:100%">
+    <tr>
+      <td> <img src="Images/40x48-Vivienda.jpg" alt="Cuartos">    </td>
+      <td style="vertical-align:central;"> <strong>Cuartos</strong></td>
+    </tr>
+  </table>
+<br />
+  <p>Registre en la casilla, el número de cuartos que tiene en total su vivienda, sin considerar pasillos ni baños.</p>
+
+     <p><a href="#" onClick="abrirVentana('Ayuda_Viv_03_Nmerocuartos.html')">Ver ejemplos y más información…</a></p>
+            ]]>
+   </ayuda>
+ <ayuda id="7" >
+    <![CDATA[   <script>
+  function abrirVentana(url) {
+    var ancho       = window.innerWidth  - 200;
+    var alto        = window.innerHeight - 400;
+    var izquierda   = (screen.width  / 2)-(ancho / 2);
+    var arriba      = (screen.height / 2)-(alto  / 2);
+    var windowsInfo = window.open(url,'_blank','height='+alto+',left='+izquierda+',location=no,menubar=no,resizable=yes,scrollbars=yes,status=no,titlebar=no,toolbar=no,top='+arriba+',width='+ancho);    
+  } 
+  </script>
+  <table style "width:100%">
+    <tr>
+      <td> <img src="Images/40x48-Vivienda.jpg" alt="Luz eléctrica">    </td>
+      <td style="vertical-align:central;"> <strong>Luz eléctrica</strong></td>
+    </tr>
+  </table>
+<br />
+  <p>Considere que tiene luz eléctrica si al menos hay un foco que utilice para alumbrar.</p>
+     <p><a href="#" onClick="abrirVentana('Ayuda_Viv_04_Luzelectrica.html')">Más información…</a></p>
+            ]]>
+   </ayuda>
+ <ayuda id="8" >
+    <![CDATA[   <script>
+  function abrirVentana(url) {
+    var ancho       = window.innerWidth  - 200;
+    var alto        = window.innerHeight - 400;
+    var izquierda   = (screen.width  / 2)-(ancho / 2);
+    var arriba      = (screen.height / 2)-(alto  / 2);
+    var windowsInfo = window.open(url,'_blank','height='+alto+',left='+izquierda+',location=no,menubar=no,resizable=yes,scrollbars=yes,status=no,titlebar=no,toolbar=no,top='+arriba+',width='+ancho);    
+  } 
+  </script>
+  <table style "width:100%">
+    <tr>
+      <td> <img src="Images/40x48-Vivienda.jpg" alt="Agua entubada">    </td>
+      <td style="vertical-align:central;"> <strong>Agua entubada</strong></td>
+    </tr>
+  </table>
+<br />
+  <p>Indique dónde se ubican las llaves o mangueras de donde obtienen el agua.</p>
+  <p>Para más información, seleccione:</p>
+  <ul>
+<li><p> <a href="#" onClick="abrirVentana('Ayuda_Viv_05_Dentrodevivienda.html')">Dentro de la vivienda</a></p></li>
+<li> <p> <a href="#" onClick="abrirVentana('Ayuda_Viv_05_Soloenpatio.html')">Sólo en el patio o terreno</a></p></li>
+<li> <p> <a href="#" onClick="abrirVentana('Ayuda_Viv_05_Notienenagua.html')">No tienen agua entubada</a></p></li>
+            ]]>
+   </ayuda>
+ <ayuda id="9" >
+    <![CDATA[   <script>
+  function abrirVentana(url) {
+    var ancho       = window.innerWidth  - 200;
+    var alto        = window.innerHeight - 400;
+    var izquierda   = (screen.width  / 2)-(ancho / 2);
+    var arriba      = (screen.height / 2)-(alto  / 2);
+    var windowsInfo = window.open(url,'_blank','height='+alto+',left='+izquierda+',location=no,menubar=no,resizable=yes,scrollbars=yes,status=no,titlebar=no,toolbar=no,top='+arriba+',width='+ancho);    
+  } 
+  </script>
+  <table style "width:100%">
+    <tr>
+      <td> <img src="Images/40x48-Vivienda.jpg" alt="Abastecimiento del agua">    </td>
+      <td style="vertical-align:central;"> <strong>Abastecimiento del agua</strong></td>
+    </tr>
+  </table>
+<br />
+  <p>Indique la opción que corresponda a la procedencia del agua entubada.</p>
+  <p>Para más información, seleccione:</p>
+  <ul>
+ <li><p> <a href="#" onClick="abrirVentana('Ayuda_Viv_06_Delserviciopublico.html')">Del servicio público de agua </a></p></li>
+<li> <p> <a href="#" onClick="abrirVentana('Ayuda_Viv_06_Pozocomunitario.html')">De un pozo comunitario </a></p></li>
+<li> <p> <a href="#" onClick="abrirVentana('Ayuda_Viv_06_Pozoparticular.html')">De un pozo particular </a></p></li>
+<li> <p> <a href="#" onClick="abrirVentana('Ayuda_Viv_06_Deunapipa.html')">De una pipa </a></p></li>
+<li> <p> <a href="#" onClick="abrirVentana('Ayuda_Viv_06_Deotravivienda.html')">De otra vivienda </a></p></li>
+<li> <p> <a href="#" onClick="abrirVentana('Ayuda_Viv_06_Deotrolugar.html')">De otro lugar </a></p></li>
+ </ul> 
+            ]]>
+   </ayuda>
+ <ayuda id="10" >
+    <![CDATA[  <script>
+  function abrirVentana(url) {
+    var ancho       = window.innerWidth  - 200;
+    var alto        = window.innerHeight - 400;
+    var izquierda   = (screen.width  / 2)-(ancho / 2);
+    var arriba      = (screen.height / 2)-(alto  / 2);
+    var windowsInfo = window.open(url,'_blank','height='+alto+',left='+izquierda+',location=no,menubar=no,resizable=yes,scrollbars=yes,status=no,titlebar=no,toolbar=no,top='+arriba+',width='+ancho);    
+  } 
+  </script>
+  <table style "width:100%">
+    <tr>
+      <td> <img src="Images/40x48-Vivienda.jpg" alt="Agua no entubada">    </td>
+      <td style="vertical-align:central;"> <strong>Agua no entubada</strong></td>
+    </tr>
+  </table>
+<br />
+  <p>Indique de dónde obtienen agua los ocupantes que no la tienen entubada en su vivienda.</p>
+  <p>Para más información, seleccione:</p>
+  <ul>
+ <li><p> <a href="#" onClick="abrirVentana('Ayuda_Viv_07_Unpozo.html')">Un pozo </a></p></li>
+<li> <p> <a href="#" onClick="abrirVentana('Ayuda_Viv_07_Llavecomunitaria.html')">Una llave comunitaria </a></p></li>
+<li> <p> <a href="#" onClick="abrirVentana('Ayuda_Viv_07_Otravivienda.html')">Otra vivienda </a></p></li>
+<li> <p> <a href="#" onClick="abrirVentana('Ayuda_Viv_07_Unrioarroyo.html')">Un río, arroyo o lago </a></p></li>
+<li> <p> <a href="#" onClick="abrirVentana('Ayuda_Viv_07_Traeunapipa.html')">La trae una pipa </a></p></li>
+<li> <p> <a href="#" onClick="abrirVentana('Ayuda_Viv_07_Captandelluvia.html')">La captan de la lluvia </a></p></li>
+ </ul> 
+            ]]>
+   </ayuda>
+ <ayuda id="11" >
+    <![CDATA[  <script>
+  function abrirVentana(url) {
+    var ancho       = window.innerWidth  - 200;
+    var alto        = window.innerHeight - 400;
+    var izquierda   = (screen.width  / 2)-(ancho / 2);
+    var arriba      = (screen.height / 2)-(alto  / 2);
+    var windowsInfo = window.open(url,'_blank','height='+alto+',left='+izquierda+',location=no,menubar=no,resizable=yes,scrollbars=yes,status=no,titlebar=no,toolbar=no,top='+arriba+',width='+ancho);    
+  } 
+  </script>
+  <table style "width:100%">
+    <tr>
+      <td> <img src="Images/40x48-Vivienda.jpg" alt="Sanitario">    </td>
+      <td style="vertical-align:central;"> <strong>Sanitario</strong></td>
+    </tr>
+  </table>
+<br />
+  <p>Indique el tipo de sanitario de su vivienda.</p>
+  <p>Para más información, seleccione:</p>
+  <ul>
+<li><p> <a href="#" onClick="abrirVentana('Ayuda_Viv_08_Tazabaño.html')">Taza de baño</a></p></li>
+<li> <p> <a href="#" onClick="abrirVentana('Ayuda_Viv_08_Letrina.html')">Letrina</a></p></li>
+            ]]>
+   </ayuda>
+ <ayuda id="12" >
+    <![CDATA[  <script>
+  function abrirVentana(url) {
+    var ancho       = window.innerWidth  - 200;
+    var alto        = window.innerHeight - 400;
+    var izquierda   = (screen.width  / 2)-(ancho / 2);
+    var arriba      = (screen.height / 2)-(alto  / 2);
+    var windowsInfo = window.open(url,'_blank','height='+alto+',left='+izquierda+',location=no,menubar=no,resizable=yes,scrollbars=yes,status=no,titlebar=no,toolbar=no,top='+arriba+',width='+ancho);    
+  } 
+  </script>
+  <table style "width:100%">
+    <tr>
+      <td> <img src="Images/40x48-Vivienda.jpg" alt="Admisión de agua">    </td>
+      <td style="vertical-align:central;"> <strong>Admisión de agua</strong></td>
+    </tr>
+  </table>
+<br />
+  <p>Indique si el baño de su vivienda admite agua para evacuar los desechos.</p>
+  <p>Para más información, seleccione:</p>
+  <ul>
+<li><p> <a href="#" onClick="abrirVentana('Ayuda_Viv_09_Tienedescargadirecta.html')">Tiene descarga directa de agua</a></p></li>
+<li> <p> <a href="#" onClick="abrirVentana('Ayuda_Viv_09_Echanaguacubeta.html')">Le echan agua con cubeta</a></p></li>
+<li> <p> <a href="#" onClick="abrirVentana('Ayuda_Viv_09_Nopuedeecharagua.html')">No se le puede echar agua</a></p></li>
+            ]]>
+   </ayuda>
+ <ayuda id="13" >
+    <![CDATA[ <script>
+  function abrirVentana(url) {
+    var ancho       = window.innerWidth  - 200;
+    var alto        = window.innerHeight - 400;
+    var izquierda   = (screen.width  / 2)-(ancho / 2);
+    var arriba      = (screen.height / 2)-(alto  / 2);
+    var windowsInfo = window.open(url,'_blank','height='+alto+',left='+izquierda+',location=no,menubar=no,resizable=yes,scrollbars=yes,status=no,titlebar=no,toolbar=no,top='+arriba+',width='+ancho);    
+  } 
+  </script>
+  <table style "width:100%">
+    <tr>
+      <td> <img src="Images/40x48-Vivienda.jpg" alt="Drenaje">    </td>
+      <td style="vertical-align:central;"> <strong>Drenaje</strong></td>
+    </tr>
+  </table>
+<br />
+  <p>Seleccione la opción que corresponda a la conexión del drenaje de su vivienda.</p>
+  <p>Para más información, seleccione:</p>
+  <ul>
+<li><p> <a href="#" onClick="abrirVentana('Ayuda_Viv_10_Redpublica.html')">La red pública</a></p></li>
+<li> <p> <a href="#" onClick="abrirVentana('Ayuda_Viv_10_Fosaseptica.html')">Una fosa séptica o tanque séptico</a></p></li>
+<li> <p> <a href="#" onClick="abrirVentana('Ayuda_Viv_10_Tberiaabarranca.html')">Una tubería que va a dar a una barranca o grieta</a></p></li>
+<li> <p> <a href="#" onClick="abrirVentana('Ayuda_Viv_10_Tuberiaario.html')">Una tubería que va a dar a un río, lago o mar</a></p></li>
+            ]]>
+   </ayuda>
+  <ayuda id="14" >
+    <![CDATA[  <script>
+  function abrirVentana(url) {
+    var ancho       = window.innerWidth  - 200;
+    var alto        = window.innerHeight - 400;
+    var izquierda   = (screen.width  / 2)-(ancho / 2);
+    var arriba      = (screen.height / 2)-(alto  / 2);
+    var windowsInfo = window.open(url,'_blank','height='+alto+',left='+izquierda+',location=no,menubar=no,resizable=yes,scrollbars=yes,status=no,titlebar=no,toolbar=no,top='+arriba+',width='+ancho);    
+  } 
+  </script>
+  <table style "width:100%">
+    <tr>
+      <td> <img src="Images/40x48-Vivienda.jpg" alt="Bienes y tecnología">    </td>
+      <td style="vertical-align:central;"> <strong>Bienes y tecnología</strong></td>
+    </tr>
+  </table>
+<br />
+  <p>Indique si en la vivienda cuenta o no con aparatos electrodomésticos y servicios de tecnologías de información y comunicación.</p>
+
+     <p><a href="#" onClick="abrirVentana('Indiquesienlaviviendacuentanbienesyservicios.html')">Ver imágenes con ejemplos</a></p>
+            ]]>
+</ayuda>
+
+</Ayudas>

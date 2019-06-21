@@ -1,0 +1,244 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="Cai2020.SiteMaster" %>
+<%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="cc2" %>
+<!DOCTYPE html>
+<%--<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">--%>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head runat="server">
+    <title>Prueba de Registro de Información por Internet</title>
+    <meta http-equiv="Cache-Control" content="no-store" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" /><%--para que tome el tamaño de la pantalla--%>
+    <link rel="shortcut icon" type="image/x-icon" href="images/nube.ico" />
+    <link href="Styles/Site.css" rel="stylesheet" type="text/css" />
+    <script type="text/javascript" src="<%= ResolveClientUrl("~/Scripts/jquery-3.1.1.min.js")%>"></script>
+    <script type="text/javascript" src="<%= ResolveClientUrl("~/Scripts/jquery-ui-1.12.1.js")%>"></script>
+    <script type="text/javascript" src="<%= ResolveClientUrl("~/Scripts/bootstrap.min.js")%>"></script>
+    <link rel="stylesheet" type="text/css" href="Styles/bootstrap.min.css"/>
+    <link rel="stylesheet" type="text/css" href="Styles/bootstrap-theme.min.css"  />
+    <link rel="stylesheet" type="text/css" href="Styles/StyleChat.css"/>
+ <%--   <script type="text/javascript">
+        var bPreguntar = true;
+        window.onbeforeunload = preguntarAntesDeSalir;
+        function preguntarAntesDeSalir()
+        {
+        if (bPreguntar)
+            return "¿Está seguro de abandonar la aplicación?";
+        }
+    </script>--%>
+    <script type="text/javascript">
+        window.onunload = function () {
+            try
+            {
+                if ((sessionId != null) && (sessionId != "null") && (sessionId != ""))
+                    logout();
+            }
+            catch(err)
+            {
+
+               }
+        };
+    </script>
+    <style type="text/css">
+        .progress {height: 10px; opacity: 80;}
+        .progress-bar-custom {  background: rgba(158, 203, 242, 1);   }/*cambiar el color de la barra de progreso para preguntas*/
+        .progress-bar-custom2 {  background: rgba(88, 172, 245, 1);   }/*cambiar el color de la barra de progreso para personas*/
+
+        .dropdown-submenu {
+            position: relative;
+        }
+
+        #menu1{
+                top: 100%;
+                left: 0;
+                margin-top: -6px;
+                margin-left: -1px;
+                -webkit-border-radius: 0 6px 6px 6px;
+                -moz-border-radius: 0 6px 6px;
+                border-radius: 0 6px 6px 6px;
+        }
+
+        .dropdown-submenu>.dropdown-menu {
+            top: 0;
+            left: 100%;
+            margin-top: -6px;
+            margin-left: -1px;
+            -webkit-border-radius: 0 6px 6px 6px;
+            -moz-border-radius: 0 6px 6px;
+            border-radius: 0 6px 6px 6px;
+        }
+
+        .dropdown-submenu:hover>.dropdown-menu {
+            display: block;
+        }
+
+        /*.dropdown-submenu>a:after {
+            display: block;
+            content: " ";
+            float: right;
+            width: 0;
+            height: 0;
+            border-color: transparent;
+            border-style: solid;
+            border-width: 5px 0 5px 5px;
+            border-left-color: #ccc;
+            margin-top: 5px;
+            margin-right: -10px;
+        }*/
+
+        .dropdown-submenu:hover>a:after {
+            border-left-color: #fff;
+        }
+
+        /*.dropdown-submenu.pull-left {
+            float: none;
+        }*/
+
+        /*.dropdown-submenu.pull-left>.dropdown-menu {
+            left: -100%;
+            margin-left: 10px;
+            -webkit-border-radius: 6px 0 6px 6px;
+            -moz-border-radius: 6px 0 6px 6px;
+            border-radius: 6px 0 6px 6px;
+        }*/
+    </style>
+    <asp:ContentPlaceHolder ID="HeadContent" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body id="body" runat="server">
+    <form runat="server" >
+    <%--<div class="page">
+        <div class="header">
+            <div class="title">
+                <h1>
+                    My ASP.NET Application
+                </h1>
+            </div>
+            <div class="loginDisplay">
+                <asp:LoginView ID="HeadLoginView" runat="server" EnableViewState="false">
+                    <AnonymousTemplate>
+                        [ <a href="~/Account/Login.aspx" ID="HeadLoginStatus" runat="server">Log In</a> ]
+                    </AnonymousTemplate>
+                    <LoggedInTemplate>
+                        Welcome <span class="bold"><asp:LoginName ID="HeadLoginName" runat="server" /></span>!
+                        [ <asp:LoginStatus ID="HeadLoginStatus" runat="server" LogoutAction="Redirect" LogoutText="Log Out" LogoutPageUrl="~/"/> ]
+                    </LoggedInTemplate>
+                </asp:LoginView>
+            </div>
+            <div class="clear hideSkiplink">
+                <asp:Menu ID="NavigationMenu" runat="server" CssClass="menu" EnableViewState="false" IncludeStyleBlock="false" Orientation="Horizontal">
+                    <Items>
+                        <asp:MenuItem NavigateUrl="~/Default.aspx" Text="Home"/>
+                        <asp:MenuItem NavigateUrl="~/About.aspx" Text="About"/>
+                    </Items>
+                </asp:Menu>
+            </div>
+        </div>
+        <div class="main">
+            <asp:ContentPlaceHolder ID="MainContent" runat="server"/>
+        </div>
+        <div class="clear">
+        </div>
+    </div>
+    <div class="footer">
+        
+    </div>--%>
+
+        <div class="navbar navbar-inverse navbar-fixed-top">
+        <%--<div class="navbar navbar-default">--%>
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <%--<a class="navbar-brand" runat="server" href="~/"> <img alt="Brand" src="Images/08_png.png"/> SICAD</a>--%>
+                    <a class="navbar-brand" runat="server" href="~/"> <img alt="Brand" src="<%= ResolveClientUrl("~/Images/52x32-LogoINEGI.png") %>"/></a>
+                </div>
+                <div class="navbar-collapse collapse">
+<%--                    <ul class="nav navbar-nav">
+                        <li><a runat="server" href="~/">Inicio</a></li>
+                        <li class="divider"></li>
+                        <li class="dropdown-submenu">
+                        <a tabindex="-1" href="#">Administración<span class="caret"></span></a>
+                        <ul class="dropdown-menu" id="menu1">
+                            <li><a tabindex="-1" href="#">Second level</a></li>
+                            <li class="dropdown-submenu">
+                            <a href="#">Even More..<span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <li><a tabindex="-1" href="#">3rd level</a></li>
+                                <li class="dropdown-submenu">
+                                <a href="#">Even More..<span class="caret"></span></a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="#">4rd level</a></li>
+                    	            <li><a href="#">4rd level</a></li>
+                                </ul>
+                            </li>
+                    	        <li><a href="#">3rd level</a></li>
+                            </ul>
+                            </li>
+                            <li><a href="#">Second level</a></li>
+                            <li><a href="#">Second level</a></li>
+                        </ul>
+                        </li>
+                        <li><a runat="server" href="~/">Acerca de</a></li>
+                        <li><a runat="server" href="~/">Contacto</a></li>
+                    </ul>--%>
+ <%--                   <ul class="nav navbar-nav">
+                        <li><a runat="server" href="#" onclick="var ancho = window.innerWidth - 200;var alto = window.innerHeight - 400;var izquierda = (screen.width  / 2)-(ancho / 2);var arriba = (screen.height / 2)-(alto / 2);window.open('Informacion.html', '_blank','height='+alto+',left='+izquierda+',location=no,menubar=no,resizable=yes,scrollbars=yes,status=no,titlebar=no,toolbar=no,top='+arriba+',width='+ancho)">Información</a></li>
+                        <li class="divider"></li>
+                        <li><a runat="server" href="#" onclick="var ancho = window.innerWidth - 200;var alto = window.innerHeight - 200;var izquierda = (screen.width  / 2)-(ancho / 2);var arriba = (screen.height / 2)-(alto / 2);window.open('Instructivo.html', '_blank','height='+alto+',left='+izquierda+',location=no,menubar=no,resizable=yes,scrollbars=yes,status=no,titlebar=no,toolbar=no,top='+arriba+',width='+ancho)">Instructivo de llenado</a></li>
+                        <li class="divider"></li>
+                        <li><a runat="server" href="#" onclick="var ancho = window.innerWidth - 200;var alto = window.innerHeight - 600;var izquierda = (screen.width  / 2)-(ancho / 2);var arriba = (screen.height / 2)-(alto / 2);window.open('Confidencialidad.html', '_blank','height='+alto+',left='+izquierda+',location=no,menubar=no,resizable=yes,scrollbars=yes,status=no,titlebar=no,toolbar=no,top='+arriba+',width='+ancho)">Confidencialidad</a></li>
+                        <li class="divider"></li>
+                        <li><a runat="server" href="#" onclick="var ancho = window.innerWidth - 200;var alto = window.innerHeight - 600;var izquierda = (screen.width  / 2)-(ancho / 2);var arriba = (screen.height / 2)-(alto / 2);window.open('Obligatoriedad.html', '_blank','height='+alto+',left='+izquierda+',location=no,menubar=no,resizable=yes,scrollbars=yes,status=no,titlebar=no,toolbar=no,top='+arriba+',width='+ancho)">Obligatoriedad</a></li>
+                        <li class="divider"></li>--%>
+                        <%--<li><a runat="server" href="#" onclick="var ancho = window.innerWidth - 200;var alto = window.innerHeight - 400;var izquierda = (screen.width  / 2)-(ancho / 2);var arriba = (screen.height / 2)-(alto / 2);window.open('Tutorial.html', '_blank','height='+alto+',left='+izquierda+',location=no,menubar=no,resizable=yes,scrollbars=yes,status=no,titlebar=no,toolbar=no,top='+arriba+',width='+ancho)">Tutorial</a></li>
+                        <li class="divider"></li>--%>
+<%--                        <li><a runat="server" href="#" onclick="var ancho = window.innerWidth - 200;var alto = window.innerHeight - 600;var izquierda = (screen.width  / 2)-(ancho / 2);var arriba = (screen.height / 2)-(alto / 2);window.open('Contacto.html', '_blank','height='+alto+',left='+izquierda+',location=no,menubar=no,resizable=yes,scrollbars=yes,status=no,titlebar=no,toolbar=no,top='+arriba+',width='+ancho)">Contacto</a></li>
+                    </ul>--%>
+            <div class="loginDisplay">
+                <asp:LoginView ID="HeadLoginView" runat="server" EnableViewState="false">
+                    <AnonymousTemplate>
+                        [ <a href="~/Index.aspx" id="HeadLoginStatus" runat="server">Log In</a> ]
+                    </AnonymousTemplate>
+                    <LoggedInTemplate>
+                       <%-- Bienvenido estimado informante<span class="bold"><asp:LoginName ID="HeadLoginName" runat="server" /></span>!--%>
+                        <%--[ <asp:LoginStatus ID="LoginStatus1" runat="server" LogoutAction="Redirect" onclick="alert('hola')" LogoutText="Salir..." LogoutPageUrl="~/"/> ]--%>
+                        [ <asp:LoginStatus ID="HeadLoginStatus" runat="server" LogoutAction="Redirect" LogoutText="Salir..." LogoutPageUrl="~/"/> ]
+                    </LoggedInTemplate>
+                </asp:LoginView>
+            </div>
+                </div>
+
+<div class="modal hide" id="myModal">
+  <div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal">×</button>
+    <h3>Modal header</h3>
+  </div>
+  <div class="modal-body">
+    <p>One fine body…</p>
+  </div>
+  <div class="modal-footer">
+    <a href="#" class="btn" data-dismiss="modal">Close</a>
+    <a href="#" class="btn btn-primary">Save changes</a>
+  </div>
+</div>
+
+            </div>
+        </div>
+        <br />
+        <div class="container body-content" style="overflow:auto;">
+            <asp:ContentPlaceHolder ID="MainContent" runat="server">
+            </asp:ContentPlaceHolder>
+ <%--           <footer>
+                <p>&copy; <%: DateTime.Now.Year %> - Mi aplicación ASP.NET</p>
+            </footer>--%>
+        </div>
+    <div class="footer">
+        <%--<p>&copy; INEGI. SICAD  <a href="http://www.inegi.org.mx" rel="nofollow"><%: DateTime.Now.Year %></a>.</p>--%>
+        <hr />
+        <p>&copy; INEGI. Prueba de Registro de Información por Internet <%: DateTime.Now.Year %>.</p>
+    </div>
+    </form>
+</body>
+</html>

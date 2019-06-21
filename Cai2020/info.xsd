@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="info" targetNamespace="http://tempuri.org/info.xsd" xmlns:mstns="http://tempuri.org/info.xsd" xmlns="http://tempuri.org/info.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="info" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="info" msprop:Generator_UserDSName="info">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="reporte" msprop:Generator_TableClassName="reporteDataTable" msprop:Generator_TableVarName="tablereporte" msprop:Generator_TablePropName="reporte" msprop:Generator_RowDeletingName="reporteRowDeleting" msprop:Generator_RowChangingName="reporteRowChanging" msprop:Generator_RowEvHandlerName="reporteRowChangeEventHandler" msprop:Generator_RowDeletedName="reporteRowDeleted" msprop:Generator_UserTableName="reporte" msprop:Generator_RowChangedName="reporteRowChanged" msprop:Generator_RowEvArgName="reporteRowChangeEvent" msprop:Generator_RowClassName="reporteRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="id" msprop:Generator_ColumnVarNameInTable="columnid" msprop:Generator_ColumnPropNameInRow="id" msprop:Generator_ColumnPropNameInTable="idColumn" msprop:Generator_UserColumnName="id" type="xs:string" minOccurs="0" />
+              <xs:element name="num_cuartos" msprop:Generator_ColumnVarNameInTable="columnnum_cuartos" msprop:Generator_ColumnPropNameInRow="num_cuartos" msprop:Generator_ColumnPropNameInTable="num_cuartosColumn" msprop:Generator_UserColumnName="num_cuartos" type="xs:short" minOccurs="0" />
+              <xs:element name="hombres" msprop:Generator_ColumnVarNameInTable="columnhombres" msprop:Generator_ColumnPropNameInRow="hombres" msprop:Generator_ColumnPropNameInTable="hombresColumn" msprop:Generator_UserColumnName="hombres" type="xs:int" minOccurs="0" />
+              <xs:element name="mujeres" msprop:Generator_ColumnVarNameInTable="columnmujeres" msprop:Generator_ColumnPropNameInRow="mujeres" msprop:Generator_ColumnPropNameInTable="mujeresColumn" msprop:Generator_UserColumnName="mujeres" type="xs:int" minOccurs="0" />
+              <xs:element name="nom_imagen" msprop:Generator_ColumnVarNameInTable="columnnom_imagen" msprop:Generator_ColumnPropNameInRow="nom_imagen" msprop:Generator_ColumnPropNameInTable="nom_imagenColumn" msprop:Generator_UserColumnName="nom_imagen" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

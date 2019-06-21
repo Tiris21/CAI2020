@@ -1,0 +1,499 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?> 
+ <Ayudas>
+   <ayuda id="0" >
+    <![CDATA[  <script>
+  function abrirVentana(url) {
+    var ancho       = window.innerWidth  - 200;
+    var alto        = window.innerHeight - 400;
+    var izquierda   = (screen.width  / 2)-(ancho / 2);
+    var arriba      = (screen.height / 2)-(alto  / 2);
+    var windowsInfo = window.open(url,'_blank','height='+alto+',left='+izquierda+',location=no,menubar=no,resizable=yes,scrollbars=yes,status=no,titlebar=no,toolbar=no,top='+arriba+',width='+ancho);    
+  } 
+  </script>
+  <table style "width:100%">
+    <tr>
+      <td> <img src="Images/40x48-Familia.jpg" alt="Datos de la jefa o jefe">    </td>
+      <td style="vertical-align:central;"> <strong>Datos de la jefa o jefe</strong></td>
+    </tr>
+  </table>
+<br />
+  <p>Inicie la lista de personas, registrando los datos de la jefa o jefe de la vivienda, quien es reconocida(o) como tal por los demás residentes de la vivienda.</p>
+  <p>Sólo puede haber uno, independientemente de que sea mujer u hombre.</p>
+
+     <p><a href="#" onClick="abrirVentana('Ayuda_Lis_01_Datosdejefa.html')">Ver más información…</a></p>
+            ]]>
+   </ayuda>
+   <ayuda id="1">
+    <![CDATA[ <script>
+  function abrirVentana(url) {
+    var ancho       = window.innerWidth  - 200;
+    var alto        = window.innerHeight - 400;
+    var izquierda   = (screen.width  / 2)-(ancho / 2);
+    var arriba      = (screen.height / 2)-(alto  / 2);
+    var windowsInfo = window.open(url,'_blank','height='+alto+',left='+izquierda+',location=no,menubar=no,resizable=yes,scrollbars=yes,status=no,titlebar=no,toolbar=no,top='+arriba+',width='+ancho);    
+  } 
+  </script>
+  <table style "width:100%">
+    <tr>
+      <td> <img src="Images/40x48-Familia.jpg" alt="Completar la Lista de personas">    </td>
+      <td style="vertical-align:central;"> <strong>Completar la Lista de personas</strong></td>
+    </tr>
+  </table>
+<br />
+  <p>Utilice el botón Agregar persona, para dar de alta una persona en la lista.</p>
+  <p>Cuando termine de agregar  a todas las personas que habitan la vivienda, use el botón Finalizar lista y continuar.</p>
+  <p>Por favor recuerde que las personas a agregar deben ser residentes habituales.</p>
+
+
+     <p><a href="#" onClick="abrirVentana('Ayuda_Lis_02_Residenteshabituales.html')">Más información sobre residente habitual…</a></p>
+     <p><a href="#" onClick="abrirVentana('Ayuda_Lis_02_Completarlista.html')">Más información sobre la lista de personas…</a></p>
+            ]]> 
+   </ayuda>
+  <ayuda id="2" >
+    <![CDATA[  <script>
+  function abrirVentana(url) {
+    var ancho       = window.innerWidth  - 200;
+    var alto        = window.innerHeight - 400;
+    var izquierda   = (screen.width  / 2)-(ancho / 2);
+    var arriba      = (screen.height / 2)-(alto  / 2);
+    var windowsInfo = window.open(url,'_blank','height='+alto+',left='+izquierda+',location=no,menubar=no,resizable=yes,scrollbars=yes,status=no,titlebar=no,toolbar=no,top='+arriba+',width='+ancho);    
+  } 
+  </script>
+  <table style "width:100%">
+    <tr>
+      <td> <img src="Images/40x48-Familia.jpg" alt="Datos de las personas">    </td>
+      <td style="vertical-align:central;"> <strong>Datos de las personas</strong></td>
+    </tr>
+  </table>
+<br />
+  <p>Proporcione el nombre, sexo, edad y parentesco de la persona que quiere agregar a la lista. </p>
+  <p>Incluya a las niñas y niños chiquitos y personas ancianas, así como al personal doméstico que duerme en la vivienda.</p>
+  <p>Si los datos  de la persona son correctos, use el botón Aceptar.</p>
+
+     <p><a href="#" onClick="abrirVentana('Ayuda_Lis_03_Datosdepersonas.html')">Ver más información.</a></p>
+            ]]>
+   </ayuda>
+ <ayuda id="3" >
+    <![CDATA[  <table style "width:100%">
+    <tr>
+      <td> <img src="Images/40x48-Familia.jpg" alt="Confirmar el número de personas">    </td>
+      <td style="vertical-align:central;"> <strong>Confirmar el número de personas</strong></td>
+    </tr>
+  </table>
+<br />
+  <p>Si le faltó registrar alguna persona, conteste que No y podrá regresar a la lista de personas.</p>
+  <p>Responda que Sí, cuando el número corresponda con el total de personas que habitan la vivienda.</p>
+            ]]>
+   </ayuda>
+ <ayuda id="4" >
+    <![CDATA[  <script>
+  function abrirVentana(url) {
+    var ancho       = window.innerWidth  - 200;
+    var alto        = window.innerHeight - 400;
+    var izquierda   = (screen.width  / 2)-(ancho / 2);
+    var arriba      = (screen.height / 2)-(alto  / 2);
+    var windowsInfo = window.open(url,'_blank','height='+alto+',left='+izquierda+',location=no,menubar=no,resizable=yes,scrollbars=yes,status=no,titlebar=no,toolbar=no,top='+arriba+',width='+ancho);    
+  } 
+  </script>
+  <table style "width:100%">
+    <tr>
+      <td> <img src="Images/40x48-Familia.jpg" alt="Identificación del informante">    </td>
+      <td style="vertical-align:central;"> <strong>Identificación del informante</strong></td>
+    </tr>
+  </table>
+<br />
+  <p>Identifique, en la lista, a la persona que está proporcionando la información, haciendo clic en la casilla de la columna Informante, del renglón que corresponda.</p>
+  
+   <p><a href="#" onClick="abrirVentana('Ayuda_Lis_06_Identificaciondelinformante.html')">Ver ejemplo…</a></p>
+            ]]>
+   </ayuda>
+ <ayuda id="5" >
+    <![CDATA[  <script>
+  function abrirVentana(url) {
+    var ancho       = window.innerWidth  - 200;
+    var alto        = window.innerHeight - 400;
+    var izquierda   = (screen.width  / 2)-(ancho / 2);
+    var arriba      = (screen.height / 2)-(alto  / 2);
+    var windowsInfo = window.open(url,'_blank','height='+alto+',left='+izquierda+',location=no,menubar=no,resizable=yes,scrollbars=yes,status=no,titlebar=no,toolbar=no,top='+arriba+',width='+ancho);    
+  } 
+  </script>
+  <table style "width:100%">
+    <tr>
+      <td> <img src="Images/40x48-Familia.jpg" alt="Niñas(os) en la vivienda">    </td>
+      <td style="vertical-align:central;"> <strong>Niñas(os) en la vivienda</strong></td>
+    </tr>
+  </table>
+<br />
+  <p>Indique si ocurrió algún nacimiento en el periodo señalado.</p>
+  <p>Tome en cuenta que estas niñas o niños tienen una edad entre 0 y 2 años en estos momentos.</p>
+  
+   <p><a href="#" onClick="abrirVentana('Ayuda_Lis_07_Nacimientosniñas.html')">Ver más información</a></p>
+            ]]>
+   </ayuda>
+ <ayuda id="6" >
+    <![CDATA[  <script>
+  function abrirVentana(url) {
+    var ancho       = window.innerWidth  - 200;
+    var alto        = window.innerHeight - 400;
+    var izquierda   = (screen.width  / 2)-(ancho / 2);
+    var arriba      = (screen.height / 2)-(alto  / 2);
+    var windowsInfo = window.open(url,'_blank','height='+alto+',left='+izquierda+',location=no,menubar=no,resizable=yes,scrollbars=yes,status=no,titlebar=no,toolbar=no,top='+arriba+',width='+ancho);    
+  } 
+  </script>
+  <table style "width:100%">
+    <tr>
+      <td> <img src="Images/40x48-Familia.jpg" alt="Residencia de niñas(os)">    </td>
+      <td style="vertical-align:central;"> <strong>Residencia de niñas(os)</strong></td>
+    </tr>
+  </table>
+<br />
+  <p>Registre cuántas de estas personas, que ahora deben tener entre 0 y 2 años de edad, siguen viviendo actualmente en la vivienda. </p>
+  
+   <p><a href="#" onClick="abrirVentana('Ayuda_Lis_08_Residencianiños.html')">Ver más información…</a></p>
+            ]]>
+   </ayuda>
+ <ayuda id="7" >
+    <![CDATA[ <script>
+  function abrirVentana(url) {
+    var ancho       = window.innerWidth  - 200;
+    var alto        = window.innerHeight - 400;
+    var izquierda   = (screen.width  / 2)-(ancho / 2);
+    var arriba      = (screen.height / 2)-(alto  / 2);
+    var windowsInfo = window.open(url,'_blank','height='+alto+',left='+izquierda+',location=no,menubar=no,resizable=yes,scrollbars=yes,status=no,titlebar=no,toolbar=no,top='+arriba+',width='+ancho);    
+  } 
+  </script>
+  <table style "width:100%">
+    <tr>
+      <td> <img src="Images/40x48-Familia.jpg" alt="Entidad o país de nacimiento">    </td>
+      <td style="vertical-align:central;"> <strong>Entidad o país de nacimiento</strong></td>
+    </tr>
+  </table>
+<br />
+  <p>Seleccione la opción o registre el dato, según corresponda el lugar de nacimiento de la persona.</p>
+  
+   <p><a href="#" onClick="abrirVentana('Ayuda_Per_01_Entidadopais.html')">Ver más información…</a></p>
+            ]]>
+   </ayuda>
+ <ayuda id="8" >
+    <![CDATA[  <script>
+  function abrirVentana(url) {
+    var ancho       = window.innerWidth  - 200;
+    var alto        = window.innerHeight - 400;
+    var izquierda   = (screen.width  / 2)-(ancho / 2);
+    var arriba      = (screen.height / 2)-(alto  / 2);
+    var windowsInfo = window.open(url,'_blank','height='+alto+',left='+izquierda+',location=no,menubar=no,resizable=yes,scrollbars=yes,status=no,titlebar=no,toolbar=no,top='+arriba+',width='+ancho);    
+  } 
+  </script>
+  <table style "width:100%">
+    <tr>
+      <td> <img src="Images/40x48-Personas.jpg" alt="Afiliación a servicios de salud">    </td>
+      <td style="vertical-align:central;"> <strong>Afiliación a servicios de salud</strong></td>
+    </tr>
+  </table>
+<br />
+  <p>Seleccione hasta dos opciones, de acuerdo al servicio médico al que está afiliado.</p>
+  <p>Para más información, seleccione:</p>
+  <ul>
+ <li><p> <a href="#" onClick="abrirVentana('Ayuda_Per_02_Considerapersonaafiliada.html')"> ¿Qué personas se considera que están afiliados?... </a></p></li>
+<li> <p> <a href="#" onClick="abrirVentana('Ayuda_Per_02_Seguropopular.html')">El Seguro Popular o para una Nueva Generación  (Siglo XXI) </a></p></li>
+<li> <p> <a href="#" onClick="abrirVentana('Ayuda_Per_02_ImssIssste.html')">IMSS, ISSSTE, ISSSTE estatal, PEMEX, Defensa o Marina </a></p></li>
+<li> <p> <a href="#" onClick="abrirVentana('Ayuda_Per_02_Seguroprivado.html')">Un seguro privado </a></p></li>
+<li> <p> <a href="#" onClick="abrirVentana('Ayuda_Per_02_Otrainstitucion.html')">Otra institución (DIF, IMSS-PROSPERA) </a></p></li>
+<li> <p> <a href="#" onClick="abrirVentana('Ayuda_Per_02_Noestaafiliado.html')">No está afiliada(o) a servicios médicos </a></p></li>
+ </ul> 
+            ]]>
+   </ayuda>
+ <ayuda id="9" >
+    <![CDATA[   <script>
+  function abrirVentana(url) {
+    var ancho       = window.innerWidth  - 200;
+    var alto        = window.innerHeight - 400;
+    var izquierda   = (screen.width  / 2)-(ancho / 2);
+    var arriba      = (screen.height / 2)-(alto  / 2);
+    var windowsInfo = window.open(url,'_blank','height='+alto+',left='+izquierda+',location=no,menubar=no,resizable=yes,scrollbars=yes,status=no,titlebar=no,toolbar=no,top='+arriba+',width='+ancho);    
+  } 
+  </script>
+  <table style "width:100%">
+    <tr>
+      <td> <img src="Images/40x48-Personas.jpg" alt="Religión">    </td>
+      <td style="vertical-align:central;"> <strong>Religión</strong></td>
+    </tr>
+  </table>
+<br />
+  <p>Registre en la casilla el nombre de la religión de la persona.</p>
+  <p>Por favor, no utilice abreviaturas.</p>
+  
+   <p><a href="#" onClick="abrirVentana('Ayuda_Per_03_Religion.html')">Ver más información…</a></p>
+            ]]>
+   </ayuda>
+ <ayuda id="10" >
+    <![CDATA[  <script>
+  function abrirVentana(url) {
+    var ancho       = window.innerWidth  - 200;
+    var alto        = window.innerHeight - 400;
+    var izquierda   = (screen.width  / 2)-(ancho / 2);
+    var arriba      = (screen.height / 2)-(alto  / 2);
+    var windowsInfo = window.open(url,'_blank','height='+alto+',left='+izquierda+',location=no,menubar=no,resizable=yes,scrollbars=yes,status=no,titlebar=no,toolbar=no,top='+arriba+',width='+ancho);    
+  } 
+  </script>
+  <table style "width:100%">
+    <tr>
+      <td> <img src="Images/40x48-Personas.jpg" alt="Afrodescendientes">    </td>
+      <td style="vertical-align:central;"> <strong>Afrodescendientes</strong></td>
+    </tr>
+  </table>
+<br />
+  <p>Indique si la persona se considera a sí misma afrodescendiente.</p>
+  
+   <p><a href="#" onClick="abrirVentana('Ayuda_Per_04_Afrodescendientes.html')">Ver más información</a></p>
+            ]]>
+   </ayuda>
+ <ayuda id="11" >
+    <![CDATA[  <script>
+  function abrirVentana(url) {
+    var ancho       = window.innerWidth  - 200;
+    var alto        = window.innerHeight - 400;
+    var izquierda   = (screen.width  / 2)-(ancho / 2);
+    var arriba      = (screen.height / 2)-(alto  / 2);
+    var windowsInfo = window.open(url,'_blank','height='+alto+',left='+izquierda+',location=no,menubar=no,resizable=yes,scrollbars=yes,status=no,titlebar=no,toolbar=no,top='+arriba+',width='+ancho);    
+  } 
+  </script>
+  <table style "width:100%">
+    <tr>
+      <td> <img src="Images/40x48-Personas.jpg" alt="Habla lengua indígena">    </td>
+      <td style="vertical-align:central;"> <strong>Habla lengua indígena</strong></td>
+    </tr>
+  </table>
+<br />
+  <p>Considere que las lenguas indígenas son el conjunto de idiomas que históricamente son herencia de grupos indígenas del continente americano.</p>
+  
+   <p><a href="#" onClick="abrirVentana('Ayuda_Per_05_Lenguaindigena.html')">Ver más información</a></p>
+            ]]>
+   </ayuda>
+ <ayuda id="12" >
+    <![CDATA[   <script>
+  function abrirVentana(url) {
+    var ancho       = window.innerWidth  - 200;
+    var alto        = window.innerHeight - 400;
+    var izquierda   = (screen.width  / 2)-(ancho / 2);
+    var arriba      = (screen.height / 2)-(alto  / 2);
+    var windowsInfo = window.open(url,'_blank','height='+alto+',left='+izquierda+',location=no,menubar=no,resizable=yes,scrollbars=yes,status=no,titlebar=no,toolbar=no,top='+arriba+',width='+ancho);    
+  } 
+  </script>
+  <table style "width:100%">
+    <tr>
+      <td> <img src="Images/40x48-Personas.jpg" alt="Nombre de la lengua indígena">    </td>
+      <td style="vertical-align:central;"> <strong>Nombre de la lengua indígena</strong></td>
+    </tr>
+  </table>
+<br />
+  <p>Registre el nombre de la lengua indígena, sin usar abreviaturas.</p>
+  
+   <p><a href="#" onClick="abrirVentana('Ayuda_Per_06_Nombrelenguaindigena.html')">Ver más información</a></p>
+
+            ]]>
+   </ayuda>
+ <ayuda id="13" >
+    <![CDATA[  <script>
+  function abrirVentana(url) {
+    var ancho       = window.innerWidth  - 200;
+    var alto        = window.innerHeight - 400;
+    var izquierda   = (screen.width  / 2)-(ancho / 2);
+    var arriba      = (screen.height / 2)-(alto  / 2);
+    var windowsInfo = window.open(url,'_blank','height='+alto+',left='+izquierda+',location=no,menubar=no,resizable=yes,scrollbars=yes,status=no,titlebar=no,toolbar=no,top='+arriba+',width='+ancho);    
+  } 
+  </script>
+  <table style "width:100%">
+    <tr>
+      <td> <img src="Images/40x48-Personas.jpg" alt="Habla español">    </td>
+      <td style="vertical-align:central;"> <strong>Habla español</strong></td>
+    </tr>
+  </table>
+<br />
+  <p>Indique si, además de la lengua indígena, también habla español.</p>
+  
+   <p><a href="#" onClick="abrirVentana('Ayuda_Per_07_Hablaespañol.html')">Ver más información</a></p>
+            ]]>
+   </ayuda>
+  <ayuda id="14" >
+    <![CDATA[   <script>
+  function abrirVentana(url) {
+    var ancho       = window.innerWidth  - 200;
+    var alto        = window.innerHeight - 400;
+    var izquierda   = (screen.width  / 2)-(ancho / 2);
+    var arriba      = (screen.height / 2)-(alto  / 2);
+    var windowsInfo = window.open(url,'_blank','height='+alto+',left='+izquierda+',location=no,menubar=no,resizable=yes,scrollbars=yes,status=no,titlebar=no,toolbar=no,top='+arriba+',width='+ancho);    
+  } 
+  </script>
+  <table style "width:100%">
+    <tr>
+      <td> <img src="Images/40x48-Personas.jpg" alt="Asistencia escolar">    </td>
+      <td style="vertical-align:central;"> <strong>Asistencia escolar</strong></td>
+    </tr>
+  </table>
+<br />
+  <p>Indique si la persona está inscrita o acude regularmente como estudiante o alumno a un centro de enseñanza. </p>
+  
+   <p><a href="#" onClick="abrirVentana('Ayuda_Per_08_Asistenciaescolar.html')">Ver más información…</a></p>
+            ]]>
+</ayuda>
+ <ayuda id="15" >
+    <![CDATA[ <script>
+  function abrirVentana(url) {
+    var ancho       = window.innerWidth  - 200;
+    var alto        = window.innerHeight - 400;
+    var izquierda   = (screen.width  / 2)-(ancho / 2);
+    var arriba      = (screen.height / 2)-(alto  / 2);
+    var windowsInfo = window.open(url,'_blank','height='+alto+',left='+izquierda+',location=no,menubar=no,resizable=yes,scrollbars=yes,status=no,titlebar=no,toolbar=no,top='+arriba+',width='+ancho);    
+  } 
+  </script>
+  <table style "width:100%">
+    <tr>
+      <td> <img src="Images/40x48-Personas.jpg" alt="Escolaridad">    </td>
+      <td style="vertical-align:central;"> <strong>Escolaridad</strong></td>
+    </tr>
+  </table>
+<br />
+  <p>Seleccione la opción que corresponda al nivel de escolaridad alcanzado por la persona. </p>
+  <p>Acto seguido le aparecerá, a un lado, una casilla para que registre el último año o grado aprobado. </p>
+  <p>Debido a que interesa el último grado aprobado, si la persona se encuentra cursando algún año o grado escolar en este momento, registre el año o grado que ya aprobó, no el que esté cursando.</p>
+  
+   <p><a href="#" onClick="abrirVentana('Ayuda_Per_09_Nivelestudios.html')">Más información sobre  nivel de estudios…</a></p>
+   <p><a href="#" onClick="abrirVentana('Ayuda_Per_09_Ultimogradoaprobado.html')">Más información sobre último grado aprobado…</a></p>
+            ]]>
+   </ayuda> 
+<ayuda id="16" >
+    <![CDATA[  <script>
+  function abrirVentana(url) {
+    var ancho       = window.innerWidth  - 200;
+    var alto        = window.innerHeight - 400;
+    var izquierda   = (screen.width  / 2)-(ancho / 2);
+    var arriba      = (screen.height / 2)-(alto  / 2);
+    var windowsInfo = window.open(url,'_blank','height='+alto+',left='+izquierda+',location=no,menubar=no,resizable=yes,scrollbars=yes,status=no,titlebar=no,toolbar=no,top='+arriba+',width='+ancho);    
+  } 
+  </script>
+  <table style "width:100%">
+    <tr>
+      <td> <img src="Images/40x48-Personas.jpg" alt="Alfabetismo">    </td>
+      <td style="vertical-align:central;"> <strong>Alfabetismo</strong></td>
+    </tr>
+  </table>
+<br />
+  <p>Indique si la persona sabe leer y escribir al menos un recado, en cualquier lengua o idioma. </p>
+  
+   <p><a href="#" onClick="abrirVentana('Ayuda_Per_010_Alfabetismo.html')">Ver más información…</a></p>
+            ]]>
+   </ayuda>
+ <ayuda id="17">
+    <![CDATA[   <script>
+  function abrirVentana(url) {
+    var ancho       = window.innerWidth  - 200;
+    var alto        = window.innerHeight - 400;
+    var izquierda   = (screen.width  / 2)-(ancho / 2);
+    var arriba      = (screen.height / 2)-(alto  / 2);
+    var windowsInfo = window.open(url,'_blank','height='+alto+',left='+izquierda+',location=no,menubar=no,resizable=yes,scrollbars=yes,status=no,titlebar=no,toolbar=no,top='+arriba+',width='+ancho);    
+  } 
+  </script>
+  <table style "width:100%">
+    <tr>
+      <td> <img src="Images/40x48-Personas.jpg" alt="Entidad o país de residencia en 2012">    </td>
+      <td style="vertical-align:central;"> <strong>Entidad o país de residencia en 2012</strong></td>
+    </tr>
+  </table>
+<br />
+  <p>Seleccione la opción o registre el dato, según corresponda el lugar donde vivía la persona hace 5 años. </p>
+  
+   <p><a href="#" onClick="abrirVentana('Ayuda_Per_11_Entidadopaísresidencia2012.html')">Ver más información…</a></p>
+            ]]> 
+   </ayuda>
+  <ayuda id="18" >
+    <![CDATA[   <script>
+  function abrirVentana(url) {
+    var ancho       = window.innerWidth  - 200;
+    var alto        = window.innerHeight - 400;
+    var izquierda   = (screen.width  / 2)-(ancho / 2);
+    var arriba      = (screen.height / 2)-(alto  / 2);
+    var windowsInfo = window.open(url,'_blank','height='+alto+',left='+izquierda+',location=no,menubar=no,resizable=yes,scrollbars=yes,status=no,titlebar=no,toolbar=no,top='+arriba+',width='+ancho);    
+  } 
+  </script>
+  <table style "width:100%">
+    <tr>
+      <td> <img src="Images/40x48-Personas.jpg" alt="Situación conyugal">    </td>
+      <td style="vertical-align:central;"> <strong>Situación conyugal</strong></td>
+    </tr>
+  </table>
+<br />
+  <p>Indique la situación  conyugal que tiene actualmente la persona. </p>
+  
+   <p><a href="#" onClick="abrirVentana('Ayuda_Per_12_Situacionconyugal.html')">Ver más información…</a></p>
+            ]]>
+   </ayuda>
+ <ayuda id="19" >
+    <![CDATA[  <script>
+  function abrirVentana(url) {
+    var ancho       = window.innerWidth  - 200;
+    var alto        = window.innerHeight - 400;
+    var izquierda   = (screen.width  / 2)-(ancho / 2);
+    var arriba      = (screen.height / 2)-(alto  / 2);
+    var windowsInfo = window.open(url,'_blank','height='+alto+',left='+izquierda+',location=no,menubar=no,resizable=yes,scrollbars=yes,status=no,titlebar=no,toolbar=no,top='+arriba+',width='+ancho);    
+  } 
+  </script>
+  <table style "width:100%">
+    <tr>
+      <td> <img src="Images/40x48-Personas.jpg" alt="Trabajo">    </td>
+      <td style="vertical-align:central;"> <strong>Trabajo</strong></td>
+    </tr>
+  </table>
+<br />
+  <p>Indique si la persona trabajó la semana pasada. </p>
+  <p>Considere que la persona trabajó, si dedicó al trabajo una hora o más en dicha semana.</p>
+  
+   <p><a href="#" onClick="abrirVentana('Ayuda_Per_13_Trabajo.html')">Ver más información</a></p>
+            ]]>
+   </ayuda>
+ <ayuda id="20" >
+    <![CDATA[  <script>
+  function abrirVentana(url) {
+    var ancho       = window.innerWidth  - 200;
+    var alto        = window.innerHeight - 400;
+    var izquierda   = (screen.width  / 2)-(ancho / 2);
+    var arriba      = (screen.height / 2)-(alto  / 2);
+    var windowsInfo = window.open(url,'_blank','height='+alto+',left='+izquierda+',location=no,menubar=no,resizable=yes,scrollbars=yes,status=no,titlebar=no,toolbar=no,top='+arriba+',width='+ancho);    
+  } 
+  </script>
+  <table style "width:100%">
+    <tr>
+      <td> <img src="Images/40x48-Personas.jpg" alt="Otras actividades">    </td>
+      <td style="vertical-align:central;"> <strong>Otras actividades</strong></td>
+    </tr>
+  </table>
+<br />
+  <p>Seleccione otro tipo de actividad que realizó la persona la semana pasada. </p>
+  <p>Si la persona tuvo dos o más actividades, elija a la que dedicó más horas.</p>
+  
+   <p><a href="#" onClick="abrirVentana('Ayuda_Per_14_Otrasactividades.html')">Ver más información</a></p>
+            ]]>
+   </ayuda>
+ <ayuda id="21" >
+    <![CDATA[  <script>
+  function abrirVentana(url) {
+    var ancho       = window.innerWidth  - 200;
+    var alto        = window.innerHeight - 400;
+    var izquierda   = (screen.width  / 2)-(ancho / 2);
+    var arriba      = (screen.height / 2)-(alto  / 2);
+    var windowsInfo = window.open(url,'_blank','height='+alto+',left='+izquierda+',location=no,menubar=no,resizable=yes,scrollbars=yes,status=no,titlebar=no,toolbar=no,top='+arriba+',width='+ancho);    
+  } 
+  </script>
+  <table style "width:100%">
+    <tr>
+      <td> <img src="Images/40x48-Personas.jpg" alt="Actividades no económicas">    </td>
+      <td style="vertical-align:central;"> <strong>Actividades no económicas</strong></td>
+    </tr>
+  </table>
+<br />
+  <p>Indique a qué se dedica la persona que no trabajó ni buscó trabajo la semana pasada.</p>
+ 
+   <p><a href="#" onClick="abrirVentana('Ayuda_Per_15_Actividades_noeconomicas.html')">Ver más información</a></p>
+            ]]>
+   </ayuda>
+</Ayudas>

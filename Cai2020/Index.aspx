@@ -13,6 +13,7 @@
     <script type="text/javascript" src="Scripts/Captcha.js" ></script>
     <link type="text/css" rel="stylesheet" href="Styles/bootstrap.min.css"/>
     <link type="text/css" rel="stylesheet" href="Styles/bootstrap-theme.min.css"  />
+    <link type="text/css" rel="stylesheet" href="Styles/flag-icon.css" />  <!-- para los iconos de las banderas-->
     <title>Prueba de Registro de Información por Internet</title>
     <link rel="shortcut icon" type="image/x-icon" href="~/images/nube.ico" />
     <style type="text/css">
@@ -95,6 +96,7 @@
           //localStorage.citas = JSON.stringify(Captcha);
         //var miscitas = JSON.parse(localStorage.citas);
         var t, actual, mifoto, minum;
+        var anchotabla;
         //$(function () {
         function abrirModal(tipo) {
                $("#<%=txtusuario.ClientID%>").val("");
@@ -122,10 +124,9 @@
                 //clearTimeout(t);
                 //t = setTimeout(function () { select((i + 1) % miscitas.length); }, 20000);
             }--%>
-            
-            
 
-            $(function () {
+        $(function () {
+              
                 //var a = Math.floor((Math.random() * 19) + 1);
                 //select(a);
                 $("Button1").click(function () {
@@ -137,56 +138,93 @@
                     $("#form1").submit();
                 });
 
-               
+                // CUANDO SE CAMBIA EL IDIOMA DEL LADO DEL CLIENTE Y ACTUALIZA LA PAG
+                if (sessionStorage.getItem("idioma") != null) {
+                    cambiarIdioma(sessionStorage.getItem("idioma"));
+                    $('#btn_idioma_' + sessionStorage.getItem("idioma")).click();
+                } else {
+                    sessionStorage.setItem('idioma', 'es');                    
+                }
 
-                //$(window).load(function () {
-                //    $("#cargando").delay(700).fadeOut("slow");
-                //    $('#foto').css({ 'overflow': 'visible' });
-                //});
-                
+                // FUNCION PARA MANDAR AL POSTBACK AL MOMENTO DE CAMBIAR IDIOMA
+                $('input:radio[name=idioma]').change(function () {
+                    if ($('input:radio[name=idioma]:checked').val() != null) {
+                        // CAMBIAR IDIOMA DEL LADO DEL CLIENTE
+                        var idiom = $('input:radio[name=idioma]:checked').val();
+                        cambiarIdioma(idiom); 
 
-                //// tu elemento que quieres activar.
-                //var cargando = $("#cargando");
+                        // EN EL SERVIDOR
+                        //$('#form1').submit();  //// PARA MANDAR AL SERVER
+                    }
+                });
 
-                //// evento ajax start
-                //$(document).ajaxStart(function () {
-                //    cargando.show();
-                //});
+            anchotabla = $("#tabla_principal").width(); // PARA QUE NO SE MODIFIQUE EL ANCHO DE LA TABLA AL CAMBIAR DE IDIOMA
+            $("#idiomaServer").val(sessionStorage.getItem("idioma")); // DA VALOR AL INPUT DEL IDIOMA PARA EL SERVIDOR
+        });
 
-                //// evento ajax stop
-                //$(document).ajaxStop(function () {
-                //    cargando.hide();
-                //});
+        // EN EL CLIENTE
+        function cambiarIdioma(idioma) {      
+            // cambia el valor del input hidden para recibir el idioma de lado del server
+            $("#idiomaServer").val(idioma);
+            //ingresar el idioma en el local storage para corregir al momento de actualizar
+            sessionStorage.setItem("idioma", idioma);
+            // fija el ancho de la tabla acorde el ancho inicial de la misma
+            $("#tabla_principal").width(anchotabla);
 
-                //$('#Button1').click(function (e) {
-                //    e.preventDefault();
+            switch (idioma) {
+                case "es":
+                    // traduccion del texto de los botones
+                    $("#es_btn").text("Español");
+                    $("#in_btn").text("Inglés");
+                    $("#fr_btn").text("Francés");
 
-                //    $.ajax({
-                //        type: "POST",                                              // tipo de request que estamos generando
-                //    url: 'Index1.aspx.cs/BuscarNumAleatorio',                    // URL al que vamos a hacer el pedido
-                //        data: {mio: "hola"},                                                // data es un arreglo JSON que contiene los parámetros que
-                //        // van a ser recibidos por la función del servidor
-                //        contentType: "application/json; charset=utf-8",            // tipo de contenido
-                //        dataType: "json",                                          // formato de transmición de datos
-                //        async: true                                               // si es asincrónico o no
-                //        //success: function (resultado) {                            // función que va a ejecutar si el pedido fue exitoso
-                //            //var num = resultado.d;
-                //            //$('#lblResultado').text('Número aleatorio es ' + num);
-                //        //},
-                //        //error: function (XMLHttpRequest, textStatus, errorThrown) { // función que va a ejecutar si hubo algún tipo de error en el pedido
-                //        //    var error = eval("(" + XMLHttpRequest.responseText + ")");
-                //        //    aler(error.Message);
-                //        //}
-                //    }).done(function (resp) {
-                //        $("#vmodal").modal();
-                //    });
+                    //cambiar la imagen
+                    $('#foto').html('<img alt="Registra cuenta" class="auto-style2" src="Images/Imagen_reg_carta_480.jpg" /> <br /> <br />');
 
-                //});
+                    //cambia textos de las preguntas
+                    $(".txt_captcha").text("No soy robot (escriba aquí la palabra que aparece en el recuadro superior).");
+                    $(".txt_captcha").attr("placeholder", "No soy robot (escriba aquí la palabra que aparece en el recuadro superior).");
+                    $(".txt_usuario").text("Escriba aquí la clave de USUARIO que aparece en la carta - invitación.");
+                    $(".txt_usuario").attr("placeholder", "Escriba aquí la clave de USUARIO que aparece en la carta - invitación.");
+                    $(".txt_contra").text("Escriba aquí la CONTRASEÑA que aparece en su carta - invitación.");
+                    $(".txt_contra").attr("placeholder", "Escriba aquí la CONTRASEÑA que aparece en su carta - invitación.");
 
+                    //cambia el texto del boton "ingresar"
+                    $("#Button1").attr("value", "Ingresar");                    
+                    break;
+                case ("in"):
+                    $("#es_btn").text("Spanish");
+                    $("#in_btn").text("English");
+                    $("#fr_btn").text("French");
 
-            });
-            
-          
+                    $('#foto').html('<img alt="Registra cuenta" class="auto-style2" src="Images/Imagen_reg_carta_480_in.jpg" /> <br /> <br />');
+
+                    $(".txt_captcha").text("I am not a robot (write here the word that appears in the box above).");
+                    $(".txt_captcha").attr("placeholder", "I am not a robot (write here the word that appears in the box above).");
+                    $(".txt_usuario").text("Write here the USER password that appears in the letter - invitation.");
+                    $(".txt_usuario").attr("placeholder", "Write here the USER password that appears in the letter - invitation.");
+                    $(".txt_contra").text("Write here the PASSWORD that appears in your letter - invitation.");
+                    $(".txt_contra").attr("placeholder", "Write here the PASSWORD that appears in your letter - invitation.");
+
+                    $("#Button1").attr("value", "Enter");
+                    break;
+                case "fr":
+                    $("#es_btn").text("Espagnol");
+                    $("#in_btn").text("Anglais");
+                    $("#fr_btn").text("Francais");
+
+                    $('#foto').html('<img alt="Registra cuenta" class="auto-style2" src="Images/Imagen_reg_carta_480_fr.jpg" /> <br /> <br />');
+
+                    $(".txt_captcha").text("Je ne suis pas un robot (écrivez ici le mot qui apparaît dans l'encadré ci-dessus).");
+                    $(".txt_captcha").attr("placeholder", "Je ne suis pas un robot (écrivez ici le mot qui apparaît dans l'encadré ci-dessus).");
+                    $(".txt_usuario").text("Écrivez ici le mot de passe USER qui apparaît dans la lettre - invitation.");
+                    $(".txt_usuario").attr("placeholder", "Écrivez ici le mot de passe USER qui apparaît dans la lettre - invitation.");
+                    $(".txt_contra").text("Écrivez ici le MOT DE PASSE qui apparaît dans votre lettre - invitation.");
+                    $(".txt_contra").attr("placeholder", "Écrivez ici le MOT DE PASSE qui apparaît dans votre lettre - invitation.");
+
+                    $("#Button1").attr("value", "Entrer");
+            }
+        }
 
         function mayusculas(CampoTexto) {
             valorNuevo = CampoTexto.value.toUpperCase()
@@ -230,10 +268,62 @@
 
                               </table>
                             </div>
-                   <table class="table" style="width:100%;  border-spacing:0; background-color:lightgrey; padding:0;  margin-bottom:0px " border="1"  >
+                   <table id="tabla_principal" class="table" style="width:100%;  border-spacing:0; background-color:lightgrey; padding:0;  margin-bottom:0px " border="1"  >
+                       
+                        <!--  PARA EL SERVIDOR 
                        <tr>
                            <td> 
-                             <div id="foto" runat="server" >
+                                <div class="btn-group pull-right" data-toggle="buttons">
+                                      <label class="btn btn-default btn-xs < %=getActiveIdioma("es") %>">
+                                        <asp:RadioButton ID="es" runat="server" GroupName="idiomaASP"/> <span id="es_btn" runat="server">Español</span>
+                                          <span class="flag-icon flag-icon-mx" />
+                                      </label>
+                                      <label class="btn btn-default btn-xs < %= getActiveIdioma("in") %>">
+                                        <asp:RadioButton ID="in" runat="server" GroupName="idiomaASP" /> <span id="in_btn" runat="server">Inglés</span>
+                                          <span class="flag-icon flag-icon-us" />
+                                      </label>
+                                      <label class="btn btn-default btn-xs < %= getActiveIdioma("fr") %> ">
+                                        <asp:RadioButton ID="fr" runat="server" GroupName="idiomaASP" /> <span id="fr_btn" runat="server">Francés</span>
+                                          <span class="flag-icon flag-icon-fr" />
+                                      </label>
+                               </div>
+                           </td>
+                       </tr> --> 
+
+
+                        <%--<tr >
+                           <td>
+                               <asp:RadioButton ID="RadioButton1" runat="server" OnCheckedChanged="RadioButton1_CheckedChanged" AutoPostBack="true" /> 
+                               <asp:RadioButton ID="RadioButton2" runat="server" OnCheckedChanged="RadioButton1_CheckedChanged" AutoPostBack="true" /> 
+                               <asp:Label ID="label1" runat="server" Text="Check the check box if you agree." />
+                           </td>
+                       </tr>--%>
+
+
+                        <!-- ESTOS PARA EL CLIENTE -->
+                        <tr>      
+                           <td> 
+                                <div class="btn-group pull-right" data-toggle="buttons">
+                                      <label class="btn btn-default active btn-xs" id="btn_idioma_es">
+                                        <input type="radio" name="idioma" value="es" checked="checked"/> <span id="es_btn">Español</span> 
+                                          <span class="flag-icon flag-icon-mx">
+                                      </label>
+                                      <label class="btn btn-default btn-xs" id="btn_idioma_in">
+                                        <input type="radio" name="idioma" value="in"/> <span id="in_btn">Inglés</span> 
+                                          <span class="flag-icon flag-icon-us">
+                                      </label>
+                                      <label class="btn btn-default btn-xs" id="btn_idioma_fr">
+                                        <input type="radio" name="idioma" value="fr"/> <span id="fr_btn">Francés</span>
+                                          <span class="flag-icon flag-icon-fr">
+                                      </label>
+                                        <input id="idiomaServer" type="hidden" name="idiomaServer"/>
+                               </div>
+                           </td>
+                       </tr>
+
+                       <tr>
+                           <td>
+                               <div id="foto" runat="server" >
                                  <img alt="Registra cuenta" class="auto-style2" src="Images/Imagen_reg_carta_480.jpg" /><br />
                            
                                  <%--<img src="Imagen2.aspx"  alt="prueba de imagen dinámica" />--%>
@@ -248,7 +338,6 @@
                                      </center>
                               </div>
                            </td>
-
                         </tr> 
                                 <%--<tr>
                                     <td style="width:100%; text-align:center; background-color:rgb(235,236,239);  border-bottom-color:rgb(62,120,179); border-bottom-style:ridge; border-bottom-width:4px; border-top-color:rgb(62,120,179); border-top-style:ridge; border-top-width:4px; ">
@@ -262,22 +351,22 @@
                                                 <span class="glyphicon glyphicon-refresh"></span> 
                                             </button>
                                         </span>
-                                        <span class="auto-style1">No soy robot (escriba aquí la palabra que aparece en el recuadro superior).</span>
-                                        <asp:TextBox ID="txtusuario"  Width="100%"  placeholder="No soy robot (escriba aquí la palabra que aparece en el recuadro superior)" ToolTip="Captcha de verificación de humano"  CssClass="form-control" runat="server"  onkeyup="mayusculas(this);calle(this);"  Font-Names="Arial" Font-Size="Small" ></asp:TextBox>
+                                        <span class="auto-style1 txt_captcha" >No soy robot (escriba aquí la palabra que aparece en el recuadro superior).</span>
+                                        <asp:TextBox ID="txtusuario"  Width="100%"  placeholder="No soy robot (escriba aquí la palabra que aparece en el recuadro superior)" ToolTip="Captcha de verificación de humano"  CssClass="form-control txt_captcha" runat="server"  onkeyup="mayusculas(this);calle(this);"  Font-Names="Arial" Font-Size="Small" ></asp:TextBox>
                                     </td>
                                 </tr>
                                 <tr>
                                     <td class="input-group" style="Width:100%; border:0px">
                                         <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-                                        <span class="auto-style1">Escriba aquí la clave de USUARIO que aparece en la carta - invitación.</span>
-                                        <asp:TextBox ID="txtpassword"  Width="100%"  placeholder="Escriba aquí la clave de USUARIO que aparece en la carta - invitación" ToolTip="Código único de vivienda" CssClass="form-control" runat="server"  onkeyup="mayusculas(this);calle(this);"   Font-Names="Arial" Font-Size="Small" MaxLength="18"></asp:TextBox>
+                                        <span class="auto-style1 txt_usuario">Escriba aquí la clave de USUARIO que aparece en la carta - invitación.</span>
+                                        <asp:TextBox ID="txtpassword"  Width="100%"  placeholder="Escriba aquí la clave de USUARIO que aparece en la carta - invitación" ToolTip="Código único de vivienda" CssClass="form-control txt_usuario" runat="server"  onkeyup="mayusculas(this);calle(this);"   Font-Names="Arial" Font-Size="Small" MaxLength="18"></asp:TextBox>
                                     </td>
                                 </tr>
                                 <tr>
                                     <td class="input-group" style="Width:100%; border:0px">
                                         <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
-                                        <span class="auto-style1">Escriba aquí la CONTRASEÑA que aparece en su carta - invitación.</span>
-                                        <asp:TextBox ID="txtcontra"  Width="100%"  placeholder="Escriba aquí la CONTRASEÑA que aparece en su carta - invitación" ToolTip="Contraseña" CssClass="form-control" runat="server"  onkeyup="mayusculas(this);calle(this);"   Font-Names="Arial" Font-Size="Small" MaxLength="18" TextMode="Password" ></asp:TextBox>
+                                        <span class="auto-style1 txt_contra">Escriba aquí la CONTRASEÑA que aparece en su carta - invitación.</span>
+                                        <asp:TextBox ID="txtcontra"  Width="100%"  placeholder="Escriba aquí la CONTRASEÑA que aparece en su carta - invitación" ToolTip="Contraseña" CssClass="form-control txt_contra" runat="server"  onkeyup="mayusculas(this);calle(this);"   Font-Names="Arial" Font-Size="Small" MaxLength="18" TextMode="Password" ></asp:TextBox>
                                     </td>
                                 </tr>
                                 <tr>

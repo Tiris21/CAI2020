@@ -19,7 +19,6 @@ namespace Cai2020
         protected void Page_Load(object sender, EventArgs e)
         {
             int idazar;
-            
             OracleDataReader miReader = null;
             //Initialize Oracle  connection.
             OracleConnection con = new OracleConnection(ConfigurationManager.ConnectionStrings["cai2020"].ConnectionString);

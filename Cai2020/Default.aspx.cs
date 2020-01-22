@@ -108,9 +108,6 @@ namespace Cai2020
 
         private static void SendCompletedCallback(object sender, AsyncCompletedEventArgs e)
         {
-            
-
-
             bool mailSent = false;
             // Get the unique identifier for this asynchronous operation.
             String token = (string)e.UserState;
@@ -132,7 +129,6 @@ namespace Cai2020
 
         private void cambiaContraseña(string email, string contrasena)
         {
-
             //Response.Write("<script language='JavaScript'>alert('Se registraron correctamente los datos...!!!');</script>");
             OracleDataReader miReader = null;
 
@@ -246,16 +242,18 @@ namespace Cai2020
                 //mailBody.AppendFormat("<h4>Instituto Nacional de Estadística y Geografía INEGI</h4>");
                 mnsj.Body = mailBody.ToString();
                 mnsj.IsBodyHtml = true;
-                server.Send(mnsj);
+                ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////server.Send(mnsj);
                 ScriptManager.RegisterStartupScript(this, this.GetType(), "LaunchServerSide", "$(function() { confirmacion(); });", true);
                 programmaticModalPopup.Show();
-                if (HttpContext.Current.Session["ventana"].ToString() == "1")
+                ///////////// ESTO DE ABAJO DEBERIA ESTAR EN EL ONCLICK DEL LINKBUTTON3
+                if (HttpContext.Current.Session["ventana"].ToString() == "1") //noentra
                 {
-                    HttpContext.Current.Session.Clear();
-                    HttpContext.Current.Session.Abandon();
-                    HttpContext.Current.Session.RemoveAll();
-                    System.Web.Security.FormsAuthentication.SignOut();
-                    //Response.Redirect("index.aspx");
+                    //////////////////////////////////////////////////////////////////////////////////////////HttpContext.Current.Session.Clear();
+                    //////////////////////////////////////////////////////////////////////////////////////////HttpContext.Current.Session.Abandon();
+                    //////////////////////////////////////////////////////////////////////////////////////////HttpContext.Current.Session.RemoveAll();
+                    //////////////////////////////////////////////////////////////////////////////////////////System.Web.Security.FormsAuthentication.SignOut();
+                    
+                    // Response.Redirect("Index.aspx");
                 }
                 //Response.Redirect("Index.aspx");
 
@@ -306,42 +304,42 @@ namespace Cai2020
 
 
 
-            //OracleDataReader miReader = null;
-            //string valor = "";
-            //string oradb = ConfigurationManager.AppSettings["cai2020"];
-            //OracleConnection conn = new OracleConnection(); // C#
-            //conn.ConnectionString = oradb.ToString();
-            //conn.Open();
-            //HttpContext.Current.Session.Remove("captcha");
-            ////mandamos llamar a la funcion de borrar_todo del paquete Pkg_cai2020
-            ////Session["bandera"] = oracle.ejecutar_package("Pkg_cai2020.borrar_todo", Int64.Parse(Session["Id_inm"].ToString()), "S");
-            //try
-            //{
-            //    ////AQUI PONER EL CONTROL DE INGRESO DOBLE
-            //    OracleCommand cmd01 = new OracleCommand();
-            //    cmd01.Connection = conn;
-            //    cmd01.CommandText = "UPDATE cap_int_tc_usuario SET USUARIO = 'pru', CONTRASENA = 'pru' WHERE nombre = 'AENZRH'";
-            //    cmd01.CommandType = CommandType.Text;
-            //    int rowCount = 0;
-            //    rowCount = cmd01.ExecuteNonQuery();
-            //    //OracleDataReader dr01 = cmd01.ExecuteReader();
-            //    //while (dr01.Read())
-            //    //{
-            //    //    // your logic here
-            //    //    rowCount++;
-            //    //}
-            //    //dr01.Dispose();
-            //    cmd01.Dispose();
-            //}
-            //catch (Exception e1)
-            //{
-            //    miReader = null;
-            //    HttpContext.Current.Session["MensajeDeError"] = e1.ToString();
-            //}
-            //finally
-            //{
-            //    conn.Dispose();
-            //}
+    //OracleDataReader miReader = null;
+    //string valor = "";
+    //string oradb = ConfigurationManager.AppSettings["cai2020"];
+    //OracleConnection conn = new OracleConnection(); // C#
+    //conn.ConnectionString = oradb.ToString();
+    //conn.Open();
+    //HttpContext.Current.Session.Remove("captcha");
+    ////mandamos llamar a la funcion de borrar_todo del paquete Pkg_cai2020
+    ////Session["bandera"] = oracle.ejecutar_package("Pkg_cai2020.borrar_todo", Int64.Parse(Session["Id_inm"].ToString()), "S");
+    //try
+    //{
+    //    ////AQUI PONER EL CONTROL DE INGRESO DOBLE
+    //    OracleCommand cmd01 = new OracleCommand();
+    //    cmd01.Connection = conn;
+    //    cmd01.CommandText = "UPDATE cap_int_tc_usuario SET USUARIO = 'pru', CONTRASENA = 'pru' WHERE nombre = 'AENZRH'";
+    //    cmd01.CommandType = CommandType.Text;
+    //    int rowCount = 0;
+    //    rowCount = cmd01.ExecuteNonQuery();
+    //    //OracleDataReader dr01 = cmd01.ExecuteReader();
+    //    //while (dr01.Read())
+    //    //{
+    //    //    // your logic here
+    //    //    rowCount++;
+    //    //}
+    //    //dr01.Dispose();
+    //    cmd01.Dispose();
+    //}
+    //catch (Exception e1)
+    //{
+    //    miReader = null;
+    //    HttpContext.Current.Session["MensajeDeError"] = e1.ToString();
+    //}
+    //finally
+    //{
+    //    conn.Dispose();
+    //}
 
 
 
@@ -350,54 +348,54 @@ namespace Cai2020
 
 
 
-            //         //string oradb = "Data Source=(DESCRIPTION =(ADDRESS_LIST=(ADDRESS=(PROTOCOL=TCP)(HOST = estdembd.inegi.gob.mx)(PORT = 1521)))(CONNECT_DATA =(SERVICE_NAME = estdem)));User ID=cpv2020_pru_capweb;Password=cpv2020_pru_capweb;";
-            //         //dataSource alias = "SampleDataSource" descriptor = "(DESCRIPTION=(ADDRESS=(PROTOCOL=tcp)(HOST=estdembd.inegi.gob.mx)(PORT=1521))(CONNECT_DATA=(SERVICE_NAME=estdem))) " />
-            //         //< add name = "cai2020" connectionString = "Data Source=SampleDataSource;Persist Security Info=True;User ID=cpv2020_pru_capweb;Password=cpv2020_pru_capweb;" providerName = "Oracle.ManagedDataAccess.Client" />
-            //         string oradb = ConfigurationManager.AppSettings["cai2020"];
-            //         OracleConnection conn = new OracleConnection(); // C#
-            //         conn.ConnectionString = oradb;
-            //         conn.Open();
-            //         OracleCommand cmd = conn.CreateCommand();
-            //         cmd.CommandType = CommandType.Text;
-            //         cmd.CommandText = "UPDATE cap_int_tc_usuario SET USUARIO = 'pru', CONTRASENA = 'pru' WHERE nombre = 'AENZRH'";
-            //         //cmd.CommandText = "UPDATE cap_int_tc_usuario SET USUARIO = :param1, CONTRASENA = :param2 WHERE nombre = 'AENZRH'";
-            //        // cmd.Parameters.Add("param1", email);
-            //         //cmd.Parameters.Add("param2", contrasena);
+    //         //string oradb = "Data Source=(DESCRIPTION =(ADDRESS_LIST=(ADDRESS=(PROTOCOL=TCP)(HOST = estdembd.inegi.gob.mx)(PORT = 1521)))(CONNECT_DATA =(SERVICE_NAME = estdem)));User ID=cpv2020_pru_capweb;Password=cpv2020_pru_capweb;";
+    //         //dataSource alias = "SampleDataSource" descriptor = "(DESCRIPTION=(ADDRESS=(PROTOCOL=tcp)(HOST=estdembd.inegi.gob.mx)(PORT=1521))(CONNECT_DATA=(SERVICE_NAME=estdem))) " />
+    //         //< add name = "cai2020" connectionString = "Data Source=SampleDataSource;Persist Security Info=True;User ID=cpv2020_pru_capweb;Password=cpv2020_pru_capweb;" providerName = "Oracle.ManagedDataAccess.Client" />
+    //         string oradb = ConfigurationManager.AppSettings["cai2020"];
+    //         OracleConnection conn = new OracleConnection(); // C#
+    //         conn.ConnectionString = oradb;
+    //         conn.Open();
+    //         OracleCommand cmd = conn.CreateCommand();
+    //         cmd.CommandType = CommandType.Text;
+    //         cmd.CommandText = "UPDATE cap_int_tc_usuario SET USUARIO = 'pru', CONTRASENA = 'pru' WHERE nombre = 'AENZRH'";
+    //         //cmd.CommandText = "UPDATE cap_int_tc_usuario SET USUARIO = :param1, CONTRASENA = :param2 WHERE nombre = 'AENZRH'";
+    //        // cmd.Parameters.Add("param1", email);
+    //         //cmd.Parameters.Add("param2", contrasena);
 
-            //         int registros = cmd.ExecuteNonQuery();
-
-
+    //         int registros = cmd.ExecuteNonQuery();
 
 
-            //         string userName = (string)Session["UserName"];
-            //string password = (string)Session["Password"];
-            ////var queryString = string.Format(@"UPDATE cap_int_tc_usuario SET USUARIO = '" + email + "', CONTRASENA = '" + contrasena + "'WHERE nombre = 'AENZRH'");
-            //string queryString = "UPDATE cap_int_tc_usuario SET USUARIO = '" + email + "', CONTRASENA = '" + contrasena + "'WHERE nombre = 'AENZRH'";
-
-            ////string oradb = ConfigurationManager.AppSettings["cai2020"];
-            //try
-            //{
-            //	//OracleConnection conn = new OracleConnection(); // C#
-            //	conn.ConnectionString = oradb.ToString();
-            //	conn.Open();
-            //	//OracleCommand cmd = conn.CreateCommand();
-            //             cmd.CommandText = queryString;
-            //             cmd.CommandType = System.Data.CommandType.Text;
-            //             int rowsUpdated = cmd.ExecuteNonQuery();
-            //	if (rowsUpdated > 0)
-            //	{
-            //		mensaje_error.InnerHtml = "<strong>Exito.</strong>";
-            //		ScriptManager.RegisterStartupScript(this, this.GetType(), "LaunchServerSide", "$(function() { abrirModal(1); });", true);
-
-            //	}
-            //}
-            //catch (Exception er)
-            //{
-            //	Console.Write(er.Message);
-            //}
 
 
-        }
+    //         string userName = (string)Session["UserName"];
+    //string password = (string)Session["Password"];
+    ////var queryString = string.Format(@"UPDATE cap_int_tc_usuario SET USUARIO = '" + email + "', CONTRASENA = '" + contrasena + "'WHERE nombre = 'AENZRH'");
+    //string queryString = "UPDATE cap_int_tc_usuario SET USUARIO = '" + email + "', CONTRASENA = '" + contrasena + "'WHERE nombre = 'AENZRH'";
+
+    ////string oradb = ConfigurationManager.AppSettings["cai2020"];
+    //try
+    //{
+    //	//OracleConnection conn = new OracleConnection(); // C#
+    //	conn.ConnectionString = oradb.ToString();
+    //	conn.Open();
+    //	//OracleCommand cmd = conn.CreateCommand();
+    //             cmd.CommandText = queryString;
+    //             cmd.CommandType = System.Data.CommandType.Text;
+    //             int rowsUpdated = cmd.ExecuteNonQuery();
+    //	if (rowsUpdated > 0)
+    //	{
+    //		mensaje_error.InnerHtml = "<strong>Exito.</strong>";
+    //		ScriptManager.RegisterStartupScript(this, this.GetType(), "LaunchServerSide", "$(function() { abrirModal(1); });", true);
+
+    //	}
+    //}
+    //catch (Exception er)
+    //{
+    //	Console.Write(er.Message);
+    //}
+
+
+}
 
         protected void Button2_Click(object sender, EventArgs e)
         {
@@ -406,9 +404,16 @@ namespace Cai2020
 
         protected void LinkButton3_Click(object sender, EventArgs e)
         {
-            
+            // NO SE EJECUTA ESTE METODO
             HttpContext.Current.Session["ventana"] = "1";
-
+            Response.Write("<script language='JavaScript'>window.alert('> " + HttpContext.Current.Session["ventana"].ToString() + " ;;;');</script>");
+            
+            // LINEAS TRAIDAS DE LA FUNCION cambiarContraseña()
+            HttpContext.Current.Session.Clear();
+            HttpContext.Current.Session.Abandon();
+            HttpContext.Current.Session.RemoveAll();
+            System.Web.Security.FormsAuthentication.SignOut();
+            //Response.Redirect("Index.aspx");
         }
 
         protected void Button2_Click1(object sender, EventArgs e)

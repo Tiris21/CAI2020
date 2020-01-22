@@ -23,9 +23,10 @@ namespace Cai2020
     public partial class Index : System.Web.UI.Page
     {
         OracleServer oracle = new OracleServer();
+        string idioma;
         protected void Page_Load(object sender, EventArgs e)
         {
-            this.Page.Response.Write("<script language='JavaScript'>window.alert('eaaaaaa');</script>");
+            
             try
             {
                 //Uri uri = new Uri("/imagen.aspx");
@@ -41,8 +42,9 @@ namespace Cai2020
                 Response.ExpiresAbsolute = DateTime.Now.AddMonths(-1);
                 Response.Cache.SetCacheability(HttpCacheability.NoCache);
 
-                if (!IsPostBack) // CARGA LA PRIMERA VEZ
+                if (!IsPostBack) // CARGA LA PRIMERA VEZ UNICAMENTE
                 {
+                    //Response.Write("<script language='JavaScript'>window.alert('> " + Session["captcha"].ToString() + " ;;;');</script>");
                     Limpiar_VarSession();
                     HttpContext.Current.Session["editar"] = "0";
                     if (Request.QueryString["usuario"] != null)
@@ -65,11 +67,43 @@ namespace Cai2020
                         HttpContext.Current.Session["movil"] = "2";
                     }
 
+                    idioma = "es"; // inicia con el lenguaje en español siempre
+
                     txtpassword.Text = HttpContext.Current.Session["usu_mio"].ToString();
                     //HttpContext.Current.Session.RemoveAll();
                     txtusuario.Focus();
-                    
+
                 }
+                else
+                {
+                    idioma = Request.Form["idiomaServer"];
+                    
+                    ////Response.Write("<script language='JavaScript'>console.log('> " + idioma + " ;;;');</script>");
+                    //switch (idioma)
+                    //{
+                    //    case "es":
+                    //        foto.InnerHtml = "<img alt='Registra cuenta' class='auto-style2 eseseseses' src='Images/Imagen_reg_carta_480.jpg' /> <br /> <br />";
+                    //        es_btn.InnerHtml = "Español";
+                    //        in_btn.InnerText = "Inglés";
+                    //        fr_btn.InnerText = "Francés";
+                            
+                    //        break;
+                    //    case "in":
+                    //        foto.InnerHtml = "<img alt='Registra cuenta' class='auto-style2 ininininin' src='Images/Imagen_reg_carta_480_in.jpg' /> <br /> <br />";
+                    //        es_btn.InnerHtml = "Spanish";
+                    //        in_btn.InnerText = "English";
+                    //        fr_btn.InnerText = "French";
+                    //        break;
+                    //    case "fr":
+                    //        foto.InnerHtml = "<img alt='Registra cuenta' class='auto-style2 frfrfrfrfr' src='Images/Imagen_reg_carta_480_fr.jpg' /> <br /> <br />";
+                    //        es_btn.InnerHtml = "Espagnol";
+                    //        in_btn.InnerText = "Anglais";
+                    //        fr_btn.InnerText = "Francais";
+                    //        break;
+                    //}
+
+                }
+
             }
             catch (Exception ex)
             {
@@ -176,12 +210,13 @@ namespace Cai2020
                     sqlStmt = "Select USUARIO,NOMBRE,ID_INM from CAP_INT_TC_USUARIO where usuario=:usu and contrasena=:pwd";
                     tbl3 = oracle.RecuperaQuery(sqlStmt, txtpassword.Text.ToString(), txtcontra.Text.ToString());
                 }
+
                 // Establish a new OracleCommand
                 //con.Open();
                 //OracleCommand miComando = new OracleCommand(sqlStmt, con);
                 //miComando.CommandType = CommandType.Text;
                 //OracleDataReader result = miComando.ExecuteReader();
-                if (tbl3.Rows[0]["USUARIO"].ToString()!= "")
+                if (tbl3.Rows[0]["USUARIO"].ToString() != "")
                 {
                     if (txtusuario.Text == Session["captcha"].ToString() || txtusuario.Text=="123456")
                     {
@@ -258,246 +293,10 @@ namespace Cai2020
                     }
                     else
                     {
-                        mensaje_error.InnerHtml = "<strong>El captcha esta incorrecto</strong>";
+                        mensaje_error.InnerHtml = (idioma == "es") ? "<strong>El captcha esta incorrecto</strong>" : (idioma == "in") ? "<strong>Captcha is wrong</strong>" : "<strong>Captcha est faux</strong> ";
                         ScriptManager.RegisterStartupScript(this, this.GetType(), "LaunchServerSide", "$(function() { abrirModal(1); });", true);
                     }
-                    
-                    //else if (TextBox1.Text == txtusuario.Text && TextBox2.Text == "url(images/2.jpg)")
-                    //{
-                    //    //Lerror.Text = "";
-                    //    //demo.Attributes["class"] = "class='.collapse'";
-                    //    mensaje_error.InnerHtml = "<strong>Success!</strong>";
-                    //    //para abrir la fucnion abrirModal() de jquery que abre la venta a modal con la advertencia; 0 success, 1 error;
-                    //    //ScriptManager.RegisterStartupScript(this, this.GetType(), "LaunchServerSide", "$(function() { abrirModal(0); });", true);
-                    //    HttpCookie CookieADAuthAnda = new HttpCookie("ADAuthAnda");
-                    //    Response.AppendCookie(CookieADAuthAnda);
-                    //    FormsAuthentication.RedirectFromLoginPage(txtpassword.Text, false);
-                    //    Session["UserName"] = txtpassword.Text;
-                    //}
-                    //else if (TextBox1.Text == txtusuario.Text && TextBox2.Text == "url(images/3.jpg)")
-                    //{
-                    //    //Lerror.Text = "";
-                    //    //demo.Attributes["class"] = "class='.collapse'";
-                    //    mensaje_error.InnerHtml = "<strong>Success!</strong>";
-                    //    //para abrir la fucnion abrirModal() de jquery que abre la venta a modal con la advertencia; 0 success, 1 error;
-                    //    //ScriptManager.RegisterStartupScript(this, this.GetType(), "LaunchServerSide", "$(function() { abrirModal(0); });", true);
-                    //    HttpCookie CookieADAuthAnda = new HttpCookie("ADAuthAnda");
-                    //    Response.AppendCookie(CookieADAuthAnda);
-                    //    FormsAuthentication.RedirectFromLoginPage(txtpassword.Text, false);
-                    //    Session["UserName"] = txtpassword.Text;
-                    //}
-                    //else if (TextBox1.Text == txtusuario.Text && TextBox2.Text == "url(images/4.jpg)")
-                    //{
-                    //    //Lerror.Text = "";
-                    //    //demo.Attributes["class"] = "class='.collapse'";
-                    //    mensaje_error.InnerHtml = "<strong>Success!</strong>";
-                    //    //para abrir la fucnion abrirModal() de jquery que abre la venta a modal con la advertencia; 0 success, 1 error;
-                    //    //ScriptManager.RegisterStartupScript(this, this.GetType(), "LaunchServerSide", "$(function() { abrirModal(0); });", true);
-                    //    HttpCookie CookieADAuthAnda = new HttpCookie("ADAuthAnda");
-                    //    Response.AppendCookie(CookieADAuthAnda);
-                    //    FormsAuthentication.RedirectFromLoginPage(txtpassword.Text, false);
-                    //    Session["UserName"] = txtpassword.Text;
-                    //}
-                    //else if (TextBox1.Text == txtusuario.Text && TextBox2.Text == "url(images/5.jpg)")
-                    //{
-                    //    //Lerror.Text = "";
-                    //    //demo.Attributes["class"] = "class='.collapse'";
-                    //    mensaje_error.InnerHtml = "<strong>Success!</strong>";
-                    //    //para abrir la fucnion abrirModal() de jquery que abre la venta a modal con la advertencia; 0 success, 1 error;
-                    //    //ScriptManager.RegisterStartupScript(this, this.GetType(), "LaunchServerSide", "$(function() { abrirModal(0); });", true);
-                    //    HttpCookie CookieADAuthAnda = new HttpCookie("ADAuthAnda");
-                    //    Response.AppendCookie(CookieADAuthAnda);
-                    //    FormsAuthentication.RedirectFromLoginPage(txtpassword.Text, false);
-                    //    Session["UserName"] = txtpassword.Text;
-                    //}
-                    //else if (TextBox1.Text == txtusuario.Text && TextBox2.Text == "url(images/6.jpg)")
-                    //{
-                    //    //Lerror.Text = "";
-                    //    //demo.Attributes["class"] = "class='.collapse'";
-                    //    mensaje_error.InnerHtml = "<strong>Success!</strong>";
-                    //    //para abrir la fucnion abrirModal() de jquery que abre la venta a modal con la advertencia; 0 success, 1 error;
-                    //    //ScriptManager.RegisterStartupScript(this, this.GetType(), "LaunchServerSide", "$(function() { abrirModal(0); });", true);
-                    //    HttpCookie CookieADAuthAnda = new HttpCookie("ADAuthAnda");
-                    //    Response.AppendCookie(CookieADAuthAnda);
-                    //    FormsAuthentication.RedirectFromLoginPage(txtpassword.Text, false);
-                    //    Session["UserName"] = txtpassword.Text;
-                    //}
-                    //else if (TextBox1.Text == txtusuario.Text && TextBox2.Text == "url(images/7.jpg)")
-                    //{
-                    //    //Lerror.Text = "";
-                    //    //demo.Attributes["class"] = "class='.collapse'";
-                    //    mensaje_error.InnerHtml = "<strong>Success!</strong>";
-                    //    //para abrir la fucnion abrirModal() de jquery que abre la venta a modal con la advertencia; 0 success, 1 error;
-                    //    //ScriptManager.RegisterStartupScript(this, this.GetType(), "LaunchServerSide", "$(function() { abrirModal(0); });", true);
-                    //    HttpCookie CookieADAuthAnda = new HttpCookie("ADAuthAnda");
-                    //    Response.AppendCookie(CookieADAuthAnda);
-                    //    FormsAuthentication.RedirectFromLoginPage(txtpassword.Text, false);
-                    //    Session["UserName"] = txtpassword.Text;
-                    //}
-                    //else if (TextBox1.Text == txtusuario.Text && TextBox2.Text == "url(images/8.jpg)")
-                    //{
-                    //    //Lerror.Text = "";
-                    //    //demo.Attributes["class"] = "class='.collapse'";
-                    //    mensaje_error.InnerHtml = "<strong>Success!</strong>";
-                    //    //para abrir la fucnion abrirModal() de jquery que abre la venta a modal con la advertencia; 0 success, 1 error;
-                    //    //ScriptManager.RegisterStartupScript(this, this.GetType(), "LaunchServerSide", "$(function() { abrirModal(0); });", true);
-                    //    HttpCookie CookieADAuthAnda = new HttpCookie("ADAuthAnda");
-                    //    Response.AppendCookie(CookieADAuthAnda);
-                    //    FormsAuthentication.RedirectFromLoginPage(txtpassword.Text, false);
-                    //    Session["UserName"] = txtpassword.Text;
-                    //}
-                    //else if (TextBox1.Text == txtusuario.Text && TextBox2.Text == "url(images/9.jpg)")
-                    //{
-                    //    //Lerror.Text = "";
-                    //    //demo.Attributes["class"] = "class='.collapse'";
-                    //    mensaje_error.InnerHtml = "<strong>Success!</strong>";
-                    //    //para abrir la fucnion abrirModal() de jquery que abre la venta a modal con la advertencia; 0 success, 1 error;
-                    //    //ScriptManager.RegisterStartupScript(this, this.GetType(), "LaunchServerSide", "$(function() { abrirModal(0); });", true);
-                    //    HttpCookie CookieADAuthAnda = new HttpCookie("ADAuthAnda");
-                    //    Response.AppendCookie(CookieADAuthAnda);
-                    //    FormsAuthentication.RedirectFromLoginPage(txtpassword.Text, false);
-                    //    Session["UserName"] = txtpassword.Text;
-                    //}
-                    //else if (TextBox1.Text == txtusuario.Text && TextBox2.Text == "url(images/10.jpg)")
-                    //{
-                    //    //Lerror.Text = "";
-                    //    //demo.Attributes["class"] = "class='.collapse'";
-                    //    mensaje_error.InnerHtml = "<strong>Success!</strong>";
-                    //    //para abrir la fucnion abrirModal() de jquery que abre la venta a modal con la advertencia; 0 success, 1 error;
-                    //    //ScriptManager.RegisterStartupScript(this, this.GetType(), "LaunchServerSide", "$(function() { abrirModal(0); });", true);
-                    //    HttpCookie CookieADAuthAnda = new HttpCookie("ADAuthAnda");
-                    //    Response.AppendCookie(CookieADAuthAnda);
-                    //    FormsAuthentication.RedirectFromLoginPage(txtpassword.Text, false);
-                    //    Session["UserName"] = txtpassword.Text;
-                    //}
-                    //else if (TextBox1.Text == txtusuario.Text && TextBox2.Text == "url(images/11.jpg)")
-                    //{
-                    //    //Lerror.Text = "";
-                    //    //demo.Attributes["class"] = "class='.collapse'";
-                    //    mensaje_error.InnerHtml = "<strong>Success!</strong>";
-                    //    //para abrir la fucnion abrirModal() de jquery que abre la venta a modal con la advertencia; 0 success, 1 error;
-                    //    //ScriptManager.RegisterStartupScript(this, this.GetType(), "LaunchServerSide", "$(function() { abrirModal(0); });", true);
-                    //    HttpCookie CookieADAuthAnda = new HttpCookie("ADAuthAnda");
-                    //    Response.AppendCookie(CookieADAuthAnda);
-                    //    FormsAuthentication.RedirectFromLoginPage(txtpassword.Text, false);
-                    //    Session["UserName"] = txtpassword.Text;
-                    //}
-                    //else if (TextBox1.Text == txtusuario.Text && TextBox2.Text == "url(images/12.jpg)")
-                    //{
-                    //    //Lerror.Text = "";
-                    //    //demo.Attributes["class"] = "class='.collapse'";
-                    //    mensaje_error.InnerHtml = "<strong>Success!</strong>";
-                    //    //para abrir la fucnion abrirModal() de jquery que abre la venta a modal con la advertencia; 0 success, 1 error;
-                    //    //ScriptManager.RegisterStartupScript(this, this.GetType(), "LaunchServerSide", "$(function() { abrirModal(0); });", true);
-                    //    HttpCookie CookieADAuthAnda = new HttpCookie("ADAuthAnda");
-                    //    Response.AppendCookie(CookieADAuthAnda);
-                    //    FormsAuthentication.RedirectFromLoginPage(txtpassword.Text, false);
-                    //    Session["UserName"] = txtpassword.Text;
-                    //}
-                    //else if (TextBox1.Text == txtusuario.Text && TextBox2.Text == "url(images/13.jpg)")
-                    //{
-                    //    //Lerror.Text = "";
-                    //    //demo.Attributes["class"] = "class='.collapse'";
-                    //    mensaje_error.InnerHtml = "<strong>Success!</strong>";
-                    //    //para abrir la fucnion abrirModal() de jquery que abre la venta a modal con la advertencia; 0 success, 1 error;
-                    //    //ScriptManager.RegisterStartupScript(this, this.GetType(), "LaunchServerSide", "$(function() { abrirModal(0); });", true);
-                    //    HttpCookie CookieADAuthAnda = new HttpCookie("ADAuthAnda");
-                    //    Response.AppendCookie(CookieADAuthAnda);
-                    //    FormsAuthentication.RedirectFromLoginPage(txtpassword.Text, false);
-                    //    Session["UserName"] = txtpassword.Text;
-                    //}
-                    //else if (TextBox1.Text == txtusuario.Text && TextBox2.Text == "url(images/14.jpg)")
-                    //{
-                    //    //Lerror.Text = "";
-                    //    //demo.Attributes["class"] = "class='.collapse'";
-                    //    mensaje_error.InnerHtml = "<strong>Success!</strong>";
-                    //    //para abrir la fucnion abrirModal() de jquery que abre la venta a modal con la advertencia; 0 success, 1 error;
-                    //    //ScriptManager.RegisterStartupScript(this, this.GetType(), "LaunchServerSide", "$(function() { abrirModal(0); });", true);
-                    //    HttpCookie CookieADAuthAnda = new HttpCookie("ADAuthAnda");
-                    //    Response.AppendCookie(CookieADAuthAnda);
-                    //    FormsAuthentication.RedirectFromLoginPage(txtpassword.Text, false);
-                    //    Session["UserName"] = txtpassword.Text;
-                    //}
-                    //else if (TextBox1.Text == txtusuario.Text && TextBox2.Text == "url(images/15.jpg)")
-                    //{
-                    //    //Lerror.Text = "";
-                    //    //demo.Attributes["class"] = "class='.collapse'";
-                    //    mensaje_error.InnerHtml = "<strong>Success!</strong>";
-                    //    //para abrir la fucnion abrirModal() de jquery que abre la venta a modal con la advertencia; 0 success, 1 error;
-                    //    //ScriptManager.RegisterStartupScript(this, this.GetType(), "LaunchServerSide", "$(function() { abrirModal(0); });", true);
-                    //    HttpCookie CookieADAuthAnda = new HttpCookie("ADAuthAnda");
-                    //    Response.AppendCookie(CookieADAuthAnda);
-                    //    FormsAuthentication.RedirectFromLoginPage(txtpassword.Text, false);
-                    //    Session["UserName"] = txtpassword.Text;
-                    //}
-                    //else if (TextBox1.Text == txtusuario.Text && TextBox2.Text == "url(images/16.jpg)")
-                    //{
-                    //    //Lerror.Text = "";
-                    //    //demo.Attributes["class"] = "class='.collapse'";
-                    //    mensaje_error.InnerHtml = "<strong>Success!</strong>";
-                    //    //para abrir la fucnion abrirModal() de jquery que abre la venta a modal con la advertencia; 0 success, 1 error;
-                    //    //ScriptManager.RegisterStartupScript(this, this.GetType(), "LaunchServerSide", "$(function() { abrirModal(0); });", true);
-                    //    HttpCookie CookieADAuthAnda = new HttpCookie("ADAuthAnda");
-                    //    Response.AppendCookie(CookieADAuthAnda);
-                    //    FormsAuthentication.RedirectFromLoginPage(txtpassword.Text, false);
-                    //    Session["UserName"] = txtpassword.Text;
-                    //}
-                    //else if (TextBox1.Text == txtusuario.Text && TextBox2.Text == "url(images/17.jpg)")
-                    //{
-                    //    //Lerror.Text = "";
-                    //    //demo.Attributes["class"] = "class='.collapse'";
-                    //    mensaje_error.InnerHtml = "<strong>Success!</strong>";
-                    //    //para abrir la fucnion abrirModal() de jquery que abre la venta a modal con la advertencia; 0 success, 1 error;
-                    //    //ScriptManager.RegisterStartupScript(this, this.GetType(), "LaunchServerSide", "$(function() { abrirModal(0); });", true);
-                    //    HttpCookie CookieADAuthAnda = new HttpCookie("ADAuthAnda");
-                    //    Response.AppendCookie(CookieADAuthAnda);
-                    //    FormsAuthentication.RedirectFromLoginPage(txtpassword.Text, false);
-                    //    Session["UserName"] = txtpassword.Text;
-                    //}
-                    //else if (TextBox1.Text == txtusuario.Text && TextBox2.Text == "url(images/18.jpg)")
-                    //{
-                    //    //Lerror.Text = "";
-                    //    //demo.Attributes["class"] = "class='.collapse'";
-                    //    mensaje_error.InnerHtml = "<strong>Success!</strong>";
-                    //    //para abrir la fucnion abrirModal() de jquery que abre la venta a modal con la advertencia; 0 success, 1 error;
-                    //    //ScriptManager.RegisterStartupScript(this, this.GetType(), "LaunchServerSide", "$(function() { abrirModal(0); });", true);
-                    //    HttpCookie CookieADAuthAnda = new HttpCookie("ADAuthAnda");
-                    //    Response.AppendCookie(CookieADAuthAnda);
-                    //    FormsAuthentication.RedirectFromLoginPage(txtpassword.Text, false);
-                    //    Session["UserName"] = txtpassword.Text;
-                    //}
-                    //else if (TextBox1.Text == txtusuario.Text && TextBox2.Text == "url(images/19.jpg)")
-                    //{
-                    //    //Lerror.Text = "";
-                    //    //demo.Attributes["class"] = "class='.collapse'";
-                    //    mensaje_error.InnerHtml = "<strong>Success!</strong>";
-                    //    //para abrir la fucnion abrirModal() de jquery que abre la venta a modal con la advertencia; 0 success, 1 error;
-                    //    //ScriptManager.RegisterStartupScript(this, this.GetType(), "LaunchServerSide", "$(function() { abrirModal(0); });", true);
-                    //    HttpCookie CookieADAuthAnda = new HttpCookie("ADAuthAnda");
-                    //    Response.AppendCookie(CookieADAuthAnda);
-                    //    FormsAuthentication.RedirectFromLoginPage(txtpassword.Text, false);
-                    //    Session["UserName"] = txtpassword.Text;
-                    //}
-                    //else if (TextBox1.Text == txtusuario.Text && TextBox2.Text == "url(images/20.jpg)")
-                    //{
-                    //    //Lerror.Text = "";
-                    //    //demo.Attributes["class"] = "class='.collapse'";
-                    //    mensaje_error.InnerHtml = "<strong>Success!</strong>";
-                    //    //para abrir la fucnion abrirModal() de jquery que abre la venta a modal con la advertencia; 0 success, 1 error;
-                    //    //ScriptManager.RegisterStartupScript(this, this.GetType(), "LaunchServerSide", "$(function() { abrirModal(0); });", true);
-                    //    HttpCookie CookieADAuthAnda = new HttpCookie("ADAuthAnda");
-                    //    Response.AppendCookie(CookieADAuthAnda);
-                    //    FormsAuthentication.RedirectFromLoginPage(txtpassword.Text, false);
-                    //    Session["UserName"] = txtpassword.Text;
-                    //}
-                    //else
-                    //{
-                    //    //Lerror.Text = "Error en contraseña";
-                    //    //demo.Attributes["class"] = "class='.collapse in'";
-                    //    mensaje_error.InnerHtml = "<strong>Usuario o contraseña incorrectos!</strong>";
-                    //    //para abrir la fucnion abrirModal() de jquery que abre la venta a modal con la advertencia
-                    //    ScriptManager.RegisterStartupScript(this, this.GetType(), "LaunchServerSide", "$(function() { abrirModal(1); });", true);
-                    //}
+
                 }
                 //else
                 //{
@@ -510,7 +309,7 @@ namespace Cai2020
             catch (Exception ex)
             {
                 string r = ex.ToString();
-                mensaje_error.InnerHtml = "<strong>Acceso No Permitido!</strong>";
+                mensaje_error.InnerHtml = (idioma == "es") ? "<strong>Acceso No Permitido!</strong>" : (idioma == "in") ? "<strong>Access denied!</strong>" : "<strong>Accès refusé!</strong>";
                 ScriptManager.RegisterStartupScript(this, this.GetType(), "LaunchServerSide", "$(function() { abrirModal(1); });", true);
                 txtusuario.Text = "";
                 txtusuario.Focus();
@@ -547,9 +346,41 @@ namespace Cai2020
             }
         }
 
-        protected void Button2_Click(object sender, EventArgs e)
-        {
+        //protected void idioma_CheckedChanged(Object sender, EventArgs e)
+        //{
+        //    if (rbIng.Checked)
+        //    {
+        //        idioma = "in";
+        //    }else if (rbFran.Checked)
+        //    {
+        //        idioma = "fr";
+        //    }
+        //    else
+        //    {
+        //        idioma = "es";
+        //    }
+        //}
 
+        //protected void RadioButton1_CheckedChanged(object sender, EventArgs e)
+        //{
+        //    if (RadioButton1.Checked == true)
+        //    {
+        //        label1.Text = "ajuuuuua";
+        //        RadioButton2.Checked = false;
+        //    }
+        //    else
+        //    {
+        //        label1.Text = "asushebs";
+        //        RadioButton1.Checked = false;
+        //    }
+        //}
+
+        public string getActiveIdioma(string a)
+        {
+            if (a.Equals(idioma)) {
+                return "active";
+            }
+            return "";
         }
     }
 }

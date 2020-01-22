@@ -200,6 +200,14 @@
     <Content Include="Confirmacion.html" />
     <Content Include="Images\Imagen_crea_cuenta_480.jpg" />
     <Content Include="Images\Imagen_reg_carta_480.jpg" />
+    <Content Include="Images\Imagen_reg_carta_480_fr.jpg" />
+    <Content Include="Images\Imagen_reg_carta_480_in.jpg" />
+    <Content Include="Styles\flag-icon.css" />
+    <Content Include="Styles\flags\es.svg" />
+    <Content Include="Styles\flags\fr.svg" />
+    <Content Include="Styles\flags\gb.svg" />
+    <Content Include="Styles\flags\mx.svg" />
+    <Content Include="Styles\flags\us.svg" />
     <Content Include="textoConfirmacion.html" />
     <Content Include="Confidencialidad.html" />
     <Content Include="Contacto.html" />

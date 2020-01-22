@@ -103,8 +103,7 @@
         }
         function abrirModal2()
         {
-
-                $('#example').modal();
+            $('#example').modal();
 		}
 		
         function ShowPopup() {
@@ -141,7 +140,63 @@
                 //t = setTimeout(function () { select((i + 1) % miscitas.length); }, 20000);
             }--%>
             
-            
+        // EN EL CLIENTE
+        function cambiarIdioma(idioma) {            
+            switch (idioma) {
+                case "NUNCA ENTRARA AQUI":
+                    //cambiar la imagen
+                    $('#foto').html('<img alt="Registra cuenta" class="auto-style2" src="Images/Imagen_reg_carta_480.jpg" /> <br /> <br />');
+                    break;
+                case ("in"):
+                    $("#HeadLoginView_HeadLoginStatus").text("Exit..");
+
+                    $(".txt_correo").text("Write your email (the one you use the most).");
+                    $(".txt_correo").attr("placeholder", "Write your email (the one you use the most).");
+                    $(".txt_confirmacorreo").text("Confirm your email.");
+                    $(".txt_confirmacorreo").attr("placeholder", "Confirm your email.");
+                    $(".txt_contra").text("Password (minimum 8 characters).");
+                    $(".txt_contra").attr("placeholder", "Password (minimum 8 characters).");
+                    $(".txt_confirmacontra").text("Confirm your password.");
+                    $(".txt_confirmacontra").attr("placeholder", "Confirm your password.");
+
+                    $("#MainContent_Button2").val("See confidentiality notice.");
+                    $("#MainContent_Button1").val("Enter");
+
+
+                    break;
+                case ("fr"):
+                    $("#HeadLoginView_HeadLoginStatus").text("Sortie..");
+
+                    $(".txt_correo").text("Ecrivez votre email (celui que vous utilisez le plus).");
+                    $(".txt_correo").attr("placeholder", "Ecrivez votre email (celui que vous utilisez le plus).");
+                    $(".txt_confirmacorreo").text("Confirmez votre email.");
+                    $(".txt_confirmacorreo").attr("placeholder", "Confirmez votre email.");
+                    $(".txt_contra").text("Mot de passe (minimum 8 caractères).");
+                    $(".txt_contra").attr("placeholder", "Mot de passe (minimum 8 caractères).");
+                    $(".txt_confirmacontra").text("Confirmer votre mot de passe.");
+                    $(".txt_confirmacontra").attr("placeholder", "Confirmer votre mot de passe.");
+
+                    $("#MainContent_Button2").val("voir avis de confidentialité.");
+                    $("#MainContent_Button1").val("Entrer");
+
+                    $("#<%= Label17.ClientID%>").text("Votre compte a été créé avec succès");
+                    $("#<%= Label1.ClientID%>").text("Nous avons envoyé un message à votre adresse email, ");
+                    $("#<%= Label5.ClientID%>").text("avec la ligue pour entrer sur le site INEGI");
+                    $("#<%= Label6.ClientID%>").text("où vous pouvez répondre au questionnaire du recensement.");
+                    $("#<%= Label4.ClientID%>").text("Important:");
+                    $("#<%= Label7.ClientID%>").text("Si notre message n'apparaît pas dans votre bac");
+                    $("#<%= Label8.ClientID%>").text("Entrant, s'il vous plaît vérifier le spam");
+                    $("#<%= Label10.ClientID%>").text("Merci d'avoir participé.");                    
+                    $("#<%= LinkButton3.ClientID %>").html("Fermer");
+
+                    $("#<%= CompareValidator1.ClientID %>").text("Les emails sont différents.");
+                    $("#<%= CompareValidator2.ClientID %>").text("Les mots de passe sont différents.");
+
+                    $("#errorLongitud_btn_text").text("Fermer");
+                    $("#errorLongitud_text").html('<p style="font-weight: bold;font-family: Arial; font-size: medium; color: black; border-style: none">ERREUR DE LONGUEUR</p> <p class="small text-justify" style="font-size:large">Le mot de passe doit comporter huit caractères ou plus.</p>');
+                    break;
+            }
+        }
 
             $(function () {
                 //var a = Math.floor((Math.random() * 19) + 1);
@@ -155,7 +210,12 @@
                     $("#form1").submit();
                 });
 
-               
+               // CAMBIA EL IDIOMA
+                if (sessionStorage.getItem("idioma") != null) {
+                    if (sessionStorage.getItem("idioma") != "es") {
+                        cambiarIdioma(sessionStorage.getItem("idioma"));                        
+                    }                    
+                }
 
                 //$(window).load(function () {
                 //    $("#cargando").delay(700).fadeOut("slow");
@@ -369,99 +429,100 @@ function hideModalPopupViaClient()
 <br />
 <br />
 <br />
-          <div id="contenedor">
+    <div id="contenedor">
         <div id="hijo" >
-                            <div>
-                             <table class="table" style="width:100%; border-spacing:0px; padding:0px;  margin-bottom:0px" border="1"  >
-                                 <tr>
-                                     <td style="width:100%; background-color:white; border-bottom-color:rgb(62,120,179); border-bottom-style:ridge; border-bottom-width:4px; border-top-color:rgb(62,120,179); border-top-style:ridge; border-top-width:4px; padding-top:12px; padding-bottom:12px; border=1px">
-                                        <div class="row img-responsive h1 text-center " style="margin:1px">
-											<%--<img alt="Brand" src="images/database-lock1.png"/>&nbsp&nbsp CAI2020--%>
-                                            &nbsp;&nbsp;
-                                            <%--<a id="Label2" href="http://www.inegi.org.mx/" style="font-size:x-large; color:#3E78B3; font-family:Arial">Prueba de Registro de Información por Internet</a>--%>
-                                            &nbsp;<img alt="Crea cuenta" class="auto-style1" src="Images/Imagen_crea_cuenta_480.jpg" /><br />
-											</div>
-                                     </td>
-                                 </tr>
-                              </table>
-                            </div>
-                             <div id="foto" runat="server" >
-                                 <!--<img src="imagen.aspx"  alt="captcha" id="captcha" runat="server" />-->
-								 <%--<img src="Imagen2.aspx"  alt="prueba de imagen dinámica" />--%>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        
-                             </div>
-                             <table class="table" style="width:100%;  border-spacing:0; background-color:lightgrey; padding:0;  margin-bottom:0px " border="1"  >
-								 <%--<tr>
-                                    <td style="width:100%; text-align:center; background-color:rgb(235,236,239);  border-bottom-color:rgb(62,120,179); border-bottom-style:ridge; border-bottom-width:4px; border-top-color:rgb(62,120,179); border-top-style:ridge; border-top-width:4px; ">
-                                        <asp:Label ID="Label1" runat="server" Text="Primer Prueba de Autoempadronamiento por Internet" Font-Size="X-Large" ForeColor="#3E78B3" Font-Names="Arial"></asp:Label>
-                                    </td>
-                                </tr> --%>
-                                <tr>
-                                   <td  class="input-group" style="border-style: none; border-color: inherit; border-width: 0px; Width: 100%; top: 1px; left: 1px;">
-                                        <span class="input-group-addon" style="padding:0">
-                                            <!--<button type="button"  class="btn btn-default btn-sm"  id="correo">
-                                                <span class="glyphicon glyphicon-envelope"></span>
-                                            </button>-->
-											<span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
-                                        </span>
-                                        Escriba su correo electrónico (El que más utilice).
-                                        <asp:TextBox ID="txtcorreo"  Width="100%"  placeholder="Escriba su correo electrónico (El que más utilice)" ToolTip="Correo electrónico"  CssClass="form-control" runat="server"  Font-Names="Arial" Font-Size="Small"></asp:TextBox>
-										
-                                    </td>
-	
-                                </tr>
-								<tr>
-                                    <td  class="input-group" style="Width: 100%; border:0px">
-                                        <span class="input-group-addon" style="padding:0">
-                                        <!--    <button type="button"  class="btn btn-default btn-sm"  id="confcorreo">
-                                                <span class="glyphicon glyphicon-envelope"></span> 
-                                            </button>-->
-											<span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
-                                        </span>
-                                       Confirmar su correo electrónico.
-                                      <asp:CompareValidator ID="CompareValidator1" runat="server" ControlToCompare="txtcorreo" ControlToValidate="txtrepitecorreo" ErrorMessage="Los correos son diferentes." ForeColor="Red"></asp:CompareValidator>
-&nbsp;<asp:TextBox ID="txtrepitecorreo"  Width="100%"  placeholder="Confirmar su correo electrónico." ToolTip="Confirmar su correo electrónico."  CssClass="form-control" runat="server"    Font-Names="Arial" Font-Size="Small"></asp:TextBox>
-                                  </td>
-                                </tr>
-                                <tr>
-                                    <td class="input-group" style="Width:100%; border:0px">
-                                        <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
-                                        Contraseña (mínimo 8 caracteres).
-                                        <asp:TextBox ID="txtpassword"  Width="100%"  placeholder="Contraseña (mínimo 8 caracteres)" ToolTip="Contraseña (mínimo 8 caracteres)" CssClass="form-control" runat="server"     Font-Names="Arial" Font-Size="Small" MaxLength="18" TextMode="Password" ></asp:TextBox>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td class="input-group" style="Width:100%; border:0px">
-                                        <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
-                                        Confirmar contraseña.
-                                        <asp:CompareValidator ID="CompareValidator2" runat="server" ControlToCompare="txtpassword" ControlToValidate="txtcontra" ErrorMessage="Las contraseñas son diferentes." ForeColor="Red"></asp:CompareValidator>
-&nbsp;<asp:TextBox ID="txtcontra"  Width="100%"  placeholder="Confirmar contraseña" ToolTip="Confirmar Contraseña" CssClass="form-control" runat="server"    Font-Names="Arial" Font-Size="Small" MaxLength="18" TextMode="Password" ></asp:TextBox>
-                                    </td>
-                                </tr>
-                                <tr>                                 
-                                    <td class="input-group" style="Width:100%; border:0px">
-                                        <span class="input-group-addon"></span>
-                                        
-                                    <asp:HyperLink runat="server" id="HyperLink1" NavigateURL="Confidencialidad.html" Target="_blank" Visible="False">Ver aviso de confidencialidad</asp:HyperLink>    
-                                        <asp:Button ID="Button2" runat="server" OnClick="Button2_Click1" Text="Ver aviso de confidencialidad." />
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td style="border-top-color:black; border-top:1px; Width:100%;  border:0px" >
-                                        <asp:Button ID="Button1" runat="server" Text="Ingresar" Width="100%"  Height="25px" onclick="Butcon_Click" />
-                                        
-										<%--OnClientClick="javascript:enviar();"--%><%--onclick="Butcon_Click"--%>
-                                    </td>
-                                </tr>  
-								 <%--<tr>
-                                     <td>
-                                         <asp:LinkButton ID="btnExample" runat="server" Text="<i class='glyphicon glyphicon-arrow-right'></i> " CssClass="btn btn-default btn-lg" ></asp:LinkButton>
-                                         <asp:Button ID="btn_img" runat="server" Text="Ingresar" Width="50%"  Height="25px" onclick="btn_img_Click" />
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         
-                                         <asp:Label ID="img" runat="server" Text="l"></asp:Label>
-                                     </td>
-                                 </tr>              --%>    
-                              </table>
+            <div>
+                <table class="table" style="width:100%; border-spacing:0px; padding:0px;  margin-bottom:0px" border="1"  >
+                    <tr>
+                        <td style="width:100%; background-color:white; border-bottom-color:rgb(62,120,179); border-bottom-style:ridge; border-bottom-width:4px; border-top-color:rgb(62,120,179); border-top-style:ridge; border-top-width:4px; padding-top:12px; padding-bottom:12px; border=1px">
+                            <div class="row img-responsive h1 text-center " style="margin:1px">
+							    <%--<img alt="Brand" src="images/database-lock1.png"/>&nbsp&nbsp CAI2020--%>
+                                &nbsp;&nbsp;
+                                <%--<a id="Label2" href="http://www.inegi.org.mx/" style="font-size:x-large; color:#3E78B3; font-family:Arial">Prueba de Registro de Información por Internet</a>--%>
+                                &nbsp;<img alt="Crea cuenta" class="auto-style1" src="Images/Imagen_crea_cuenta_480.jpg" /><br />
+							</div>
+                        </td>
+                    </tr>
+                </table>
             </div>
+            <div id="foto" runat="server" >
+                <!--<img src="imagen.aspx"  alt="captcha" id="captcha" runat="server" />-->
+			    <%--<img src="Imagen2.aspx"  alt="prueba de imagen dinámica" />--%>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        
+            </div>
+        
+            <table class="table" style="width:100%;  border-spacing:0; background-color:lightgrey; padding:0;  margin-bottom:0px " border="1"  >
+			    <%--<tr>
+                    <td style="width:100%; text-align:center; background-color:rgb(235,236,239);  border-bottom-color:rgb(62,120,179); border-bottom-style:ridge; border-bottom-width:4px; border-top-color:rgb(62,120,179); border-top-style:ridge; border-top-width:4px; ">
+                        <asp:Label ID="Label1" runat="server" Text="Primer Prueba de Autoempadronamiento por Internet" Font-Size="X-Large" ForeColor="#3E78B3" Font-Names="Arial"></asp:Label>
+                    </td>
+                </tr> --%>
+                <tr>
+                    <td  class="input-group" style="border-style: none; border-color: inherit; border-width: 0px; Width: 100%; top: 1px; left: 1px;">
+                        <span class="input-group-addon" style="padding:0">
+                            <!--<button type="button"  class="btn btn-default btn-sm"  id="correo">
+                                <span class="glyphicon glyphicon-envelope"></span>
+                            </button>-->
+						    <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
+                        </span>
+                        <span class="txt_correo">Escriba su correo electrónico (El que más utilice). </span>
+                        
+                        <asp:TextBox ID="txtcorreo"  Width="100%"  placeholder="Escriba su correo electrónico (El que más utilice)" ToolTip="Correo electrónico"  CssClass="form-control txt_correo" runat="server"  Font-Names="Arial" Font-Size="Small"></asp:TextBox>
+                    </td>
+                </tr>
+				<tr>
+                    <td  class="input-group" style="Width: 100%; border:0px">
+                        <span class="input-group-addon" style="padding:0">
+                        <!--    <button type="button"  class="btn btn-default btn-sm"  id="confcorreo">
+                                <span class="glyphicon glyphicon-envelope"></span> 
+                            </button>-->
+							<span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
+                        </span>
+                        <span class="txt_confirmacorreo"> Confirmar su correo electrónico.</span>
+                        <asp:CompareValidator ID="CompareValidator1" runat="server" ControlToCompare="txtcorreo" ControlToValidate="txtrepitecorreo" ErrorMessage="Los correos son diferentes." ForeColor="Red"></asp:CompareValidator>
+                        &nbsp;<asp:TextBox ID="txtrepitecorreo"  Width="100%"  placeholder="Confirmar su correo electrónico." ToolTip="Confirmar su correo electrónico."  CssClass="form-control txt_confirmacorreo" runat="server"    Font-Names="Arial" Font-Size="Small"></asp:TextBox>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="input-group" style="Width:100%; border:0px">
+                        <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+                        <span class="txt_contra">Contraseña (mínimo 8 caracteres).</span>
+                        <asp:TextBox ID="txtpassword"  Width="100%"  placeholder="Contraseña (mínimo 8 caracteres)" ToolTip="Contraseña (mínimo 8 caracteres)" CssClass="form-control txt_contra" runat="server"     Font-Names="Arial" Font-Size="Small" MaxLength="18" TextMode="Password" ></asp:TextBox>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="input-group" style="Width:100%; border:0px">
+                        <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+                        <span class="txt_confirmacontra"> Confirmar contraseña. </span>
+                        <asp:CompareValidator ID="CompareValidator2" runat="server" ControlToCompare="txtpassword" ControlToValidate="txtcontra" ErrorMessage="Las contraseñas son diferentes." ForeColor="Red"></asp:CompareValidator>
+                        &nbsp;<asp:TextBox ID="txtcontra"  Width="100%"  placeholder="Confirmar contraseña" ToolTip="Confirmar Contraseña" CssClass="form-control txt_confirmacontra" runat="server"    Font-Names="Arial" Font-Size="Small" MaxLength="18" TextMode="Password" ></asp:TextBox>
+                    </td>
+                </tr>
+                <tr>                                 
+                    <td class="input-group" style="Width:100%; border:0px">
+                        <span class="input-group-addon"></span>                                        
+                        <asp:HyperLink runat="server" id="HyperLink1" NavigateURL="Confidencialidad.html" Target="_blank" Visible="False">Ver aviso de confidencialidad</asp:HyperLink>    
+                        <asp:Button ID="Button2" runat="server" OnClick="Button2_Click1" Text="Ver aviso de confidencialidad." />
+                    </td>
+                </tr>
+                <tr>
+                    <td style="border-top-color:black; border-top:1px; Width:100%;  border:0px" >
+                        <asp:Button ID="Button1" runat="server" Text="Ingresar" Width="100%"  Height="25px" onclick="Butcon_Click" />                                        
+						<%--OnClientClick="javascript:enviar();"--%><%--onclick="Butcon_Click"--%>
+                    </td>
+                </tr>  
+				<%--<tr>
+                    <td>
+                        <asp:LinkButton ID="btnExample" runat="server" Text="<i class='glyphicon glyphicon-arrow-right'></i> " CssClass="btn btn-default btn-lg" ></asp:LinkButton>
+                        <asp:Button ID="btn_img" runat="server" Text="Ingresar" Width="50%"  Height="25px" onclick="btn_img_Click" />
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         
+                        <asp:Label ID="img" runat="server" Text="l"></asp:Label>
+                    </td>
+                </tr>  --%>    
+            </table>
+        </div>
+
+
+
             <div id="vmodal_error" class = "modal fade"  runat="server">
                 <div id="mensaje_error" class="alert alert-danger"  runat="server"></div>
             </div>
@@ -530,22 +591,21 @@ function hideModalPopupViaClient()
             </div>
 
 
-          <div class="modal fade" id="errorLongitug">
+          <div class="modal fade" id="errorLongitug" >
                 <div class="modal-dialog">
                     <div class="modal-content">
                         <div class="modal-header">
                             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                <span aria-hidden="true">&times;</span></button>
-
+                                <span aria-hidden="true">&times;</span>
+                            </button>
                         </div>
-                        <div class="modal-body">
+                        <div class="modal-body" id="errorLongitud_text">
                             <p style="font-weight: bold;font-family: Arial; font-size: medium; color: black; border-style: none">ERROR DE LONGITUD</p>
                              <p class="small text-justify" style="font-size:large">La contraseña debe ser de ocho o más caracteres.</p>
                         </div>
                         <div class="modal-footer">
-                            <center><button type="button" class="btn btn-info" data-dismiss="modal">
-                                Cerrar</button></center>
-                            
+                            <center><button type="button" class="btn btn-info" data-dismiss="modal" id="errorLongitud_btn_text">
+                                Cerrar</button></center>                            
                         </div>
                     </div>
                     <!-- /.modal-content -->
@@ -553,7 +613,7 @@ function hideModalPopupViaClient()
                 <!-- /.modal-dialog -->
             </div>
 
-      <!-------------------------------------------------------------->
+            <!-------------------------------------------------------------->
     
 
 		<%--  <div id="example" class="modal hide fade in" style="display: none;">
